@@ -1,6 +1,8 @@
 
 import { useEffect, useState } from "react";
 import useHeaderPhotos from "./useHeaderPhotos";
+import MenuSidebar from "./MenuSideBar";
+import SocialIcons from "./socialIcons";
 
 const Header = () => {
   const { photos, loading } = useHeaderPhotos();
@@ -21,14 +23,23 @@ const Header = () => {
   }
 
   return (
-    <div className="flex-col w-full">
-      <div className="flex-col bg-secondary w-full text-text pt-[50px] pb-[80px] md:pt-[75px] md:pb-[90px] xl:pt-[85px] xl:pb-[105px] 2xl:pt-[115px] 2xl:pb-[135px]">
+    <div className="flex-col z-40 w-full top-0">
+      <div className="flex-col z-50 bg-secondary w-full text-text">
         <div className="flex items-center text-center justify-center">
           <img
             src={photos[index]}
             alt={`Profile ${index}`}
-            className="ethan-hover w-40 h-40 md:w-80 md:h-80 border-accent border-8 object-cover transition-all duration-500 ease-in-out"
+            className="w-full h-screen object-cover object-top"
           />
+             <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4">
+      <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl">
+        Robert Bonsall
+      </h1>
+      <p className="mt-4 text-lg md:text-xl lg:text-2xl 2xl:text-3xl">
+        Pennsylvania Photographer
+      </p></div>
+      <SocialIcons />
+      <MenuSidebar />
         </div>
       </div>
       <div className="h-6 flex w-full bg-accent"></div>

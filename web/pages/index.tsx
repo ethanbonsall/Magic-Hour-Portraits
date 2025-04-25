@@ -1,20 +1,18 @@
-import Courses from "../components/Portfolio/classes";
-import Header from "../components/Portfolio/headerNew";
+import Courses from "../components/home/classes";
+import Header from "../components/home/headerNew";
 
-import Education from "../components/Portfolio/education";
-import Experience from "../components/Portfolio/experience";
-import NavBar from "../components/Portfolio/navbar";
+import Education from "../components/home/education";
+import Experience from "../components/home/experience";
+import NavBar from "../components/home/navbar";
 
 const Portfolio = () => {
   return (
     <div className="bg-background flex flex-col items-center font-roboto min-h-screen">
-      <div className="h-6 flex w-full bg-accent" id="home"></div>
       <NavBar />
       <Header />
       <Education />
       <Courses />
       <Experience />
-    
     </div>
   );
 };
