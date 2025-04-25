@@ -1,8 +1,7 @@
 import Courses from "../components/Portfolio/classes";
 import Header from "../components/Portfolio/headerNew";
-import Web from "../components/Portfolio/projects";
+
 import Education from "../components/Portfolio/education";
-import Skills from "../components/Portfolio/skills";
 import Experience from "../components/Portfolio/experience";
 import NavBar from "../components/Portfolio/navbar";
 
@@ -14,9 +13,8 @@ const Portfolio = () => {
       <Header />
       <Education />
       <Courses />
-      <Web />
       <Experience />
-      <Skills />
+    
     </div>
   );
 };

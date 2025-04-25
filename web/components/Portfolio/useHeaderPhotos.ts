@@ -2,14 +2,14 @@
 import { useEffect, useState } from "react";
 
 
-const useWebpagePhotos = () => {
+const useHeaderPhotos = () => {
     const [photos, setPhotos] = useState<string[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchPhotos = async () => {
             try {
-                const response = await fetch("/api/webpage/");
+                const response = await fetch("/api/header/");
 
                 if (!response.ok) {
                     throw new Error(`Server responded with ${response.status}`);
@@ -36,4 +36,4 @@ const useWebpagePhotos = () => {
     return { photos, loading };
 };
 
-export default useWebpagePhotos;
+export default useHeaderPhotos;

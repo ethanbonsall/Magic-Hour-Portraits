@@ -1,10 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useState } from "react";
-import linkedinLogo from "@/assets/linkedin-logo.jpeg";
-import githubLogo from "@/assets/github-logo.png";
-import ThemeToggle from "@/components/toggle";
-import Logo from "@/components/nameLogo";
 import clsx from "clsx";
 import { GraduationCap, FolderKanban, Briefcase } from "lucide-react";
 
@@ -38,7 +34,6 @@ const NavBar = () => {
       <div className="flex-row justify-between items-between text-text">
         <div className="flex bg-secondary w-full max-w-full overflow-hidden justify-between items-center px-[5%]">
           <div className="flex  items-center gap-4 sm:gap-x-12 md:gap-x-16">
-            <Logo />
             {sections.map((section) => (
               <a key={section} href={`#${section}`}>
                 <div className="flex items-center justify-center">
@@ -69,29 +64,8 @@ const NavBar = () => {
             ))}
           </div>
           <div className="flex items-center gap-1 md:gap-4">
-            <ThemeToggle />
-            <a
-              href="https://www.linkedin.com/in/ethanbonsall/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={linkedinLogo.src}
-                alt="LinkedIn"
-                className="image-hover w-16 md:w-24 h-auto"
-              />
-            </a>
-            <a
-              href="https://github.com/ethanbonsall"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src={githubLogo.src}
-                alt="GitHub"
-                className="image-hover w-8 md:w-14 h-auto rounded-full"
-              />
-            </a>
+  
+         
           </div>
         </div>
       </div>

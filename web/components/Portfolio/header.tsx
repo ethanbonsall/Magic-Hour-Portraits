@@ -2,7 +2,7 @@
 import linkedinLogo from "@/assets/linkedin-logo.jpeg";
 import githubLogo from "@/assets/github-logo.png";
 import profilePic from "@/assets/image.jpeg";
-import ThemeToggle from "@/components/toggle";
+
 
 const Header = () => {
   return (
@@ -16,7 +16,6 @@ const Header = () => {
           Philadelphia, Harrisburg & Pittsburgh, PA | Chapel Hill & Charlotte,
           NC
         </h4>
-        <ThemeToggle></ThemeToggle>
       </div>
       <div className="flex gap-4 items-center pr-10">
         <a
