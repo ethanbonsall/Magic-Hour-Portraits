@@ -21,25 +21,6 @@
   --pop: #9bc0f3;
 }
 
-.image-hover {
-  transition: transform 0.3s ease-in-out;
-}
-.image-hover:hover {
-  transform: scale(1.3);
-}
-.ethan-hover {
-  transition: transform 0.3s ease-in-out;
-}
-.ethan-hover:hover {
-  transform: scale(1.1);
-}
-
-.retro-window {
-  font-family: "MS Sans Serif", Tahoma, Geneva, sans-serif;
-  box-shadow: 4px 4px 0px #222;
-  border-width: 3px;
-}
-
 button {
   font-weight: bold;
   text-transform: uppercase;
@@ -66,19 +47,4 @@ html {
 
 .nav-link:hover::after {
   @apply scale-x-100;
-}
-
-@keyframes slide-up {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-.animate-slide-up {
-  animation: slide-up 1s ease-out forwards;
 }

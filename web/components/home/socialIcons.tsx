@@ -3,8 +3,13 @@
 import { SiInstagram, SiFacebook } from "react-icons/si";
 import { Mail } from "lucide-react";
 import Link from "next/link";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const SocialIcons = () => {
+  const isMobile = useIsMobile();
+  if (isMobile) {
+    return null;
+  }
   return (
     <div className="absolute top-6 left-6 z-50 flex gap-4 text-white">
       <Link

@@ -3,11 +3,13 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const MenuSidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const isMobile = useIsMobile();
 
   return (
     <>
@@ -20,9 +22,10 @@ const MenuSidebar = () => {
       </button>
 
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-secondary text-white transform ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out z-40 p-8 flex flex-col gap-8`}
+        className={`fixed top-0 right-0 h-full bg-secondary text-white z-40 p-8 flex flex-col gap-8 transition-transform ease-in-out
+          ${isMobile ? "w-full duration-500" : "w-64 duration-300"}
+          ${isOpen ? "translate-x-0" : "translate-x-full"}
+        `}
       >
         <button onClick={toggleMenu} className="self-end">
           <X className="w-8 h-8" />
