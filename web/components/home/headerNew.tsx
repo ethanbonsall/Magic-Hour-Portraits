@@ -6,9 +6,9 @@ import MenuSidebar from "./MenuSideBar";
 import SocialIcons from "./socialIcons";
 
 const localPhotos = [
-  "/assets/header/header1.png",
-  "/assets/header/header2.png",
-  "/assets/header/header3.png",
+  "/assets/header/header1.jpg",
+  "/assets/header/header2.jpg",
+  "/assets/header/header3.jpg",
 ];
 
 const Header = () => {
