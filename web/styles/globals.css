@@ -1,50 +1,179 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css?family=Alegreya%20Sans%20SC:700|Castoro:400");
 
 :root {
-  --text: #161d1b;
-  --background: #ebf0ee;
-  --primary: #40544d;
-  --secondary: #9ca6b4;
-  --accent: #636983;
-  --reverse: #e2e9e7;
-  --pop: #046e29;
+  --text: #76515c;
+  --text-50: #f5f0f1;
+  --text-100: #eae1e4;
+  --text-200: #d6c2c8;
+  --text-300: #c1a4ad;
+  --text-400: #ac8691;
+  --text-500: #986776;
+  --text-600: #79535e;
+  --text-700: #5b3e47;
+  --text-800: #3d292f;
+  --text-900: #1e1518;
+  --text-950: #0f0a0c;
+
+  --background: #e6ecef;
+  --background-50: #eff3f5;
+  --background-100: #e0e7eb;
+  --background-200: #c1d0d7;
+  --background-300: #a2b8c3;
+  --background-400: #83a0af;
+  --background-500: #63899c;
+  --background-600: #506d7c;
+  --background-700: #3c525d;
+  --background-800: #28373e;
+  --background-900: #141b1f;
+  --background-950: #0a0e10;
+
+  --primary: #e0617b;
+  --primary-50: #fbeaed;
+  --primary-100: #f7d4db;
+  --primary-200: #eeaab7;
+  --primary-300: #e67f94;
+  --primary-400: #dd5570;
+  --primary-500: #d52a4c;
+  --primary-600: #aa223d;
+  --primary-700: #80192e;
+  --primary-800: #55111e;
+  --primary-900: #2b080f;
+  --primary-950: #150408;
+
+  --secondary: #b8dfea;
+  --secondary-50: #ebf6f9;
+  --secondary-100: #d8edf3;
+  --secondary-200: #b0dce8;
+  --secondary-300: #89cadc;
+  --secondary-400: #62b8d0;
+  --secondary-500: #3ba7c4;
+  --secondary-600: #2f859d;
+  --secondary-700: #236476;
+  --secondary-800: #17434f;
+  --secondary-900: #0c2127;
+  --secondary-950: #061114;
+
+  --accent: #61cf3f;
+  --accent-50: #eefaeb;
+  --accent-100: #ddf5d6;
+  --accent-200: #bcebad;
+  --accent-300: #9ae085;
+  --accent-400: #78d65c;
+  --accent-500: #57cc33;
+  --accent-600: #45a329;
+  --accent-700: #347a1f;
+  --accent-800: #235214;
+  --accent-900: #11290a;
+  --accent-950: #091405;
 }
 .dark {
-  --text: #e2e9e7;
-  --background: #0f1412;
-  --primary: #abbfb8;
-  --secondary: #4b5563;
-  --accent: #7c829c;
-  --reverse: #161d1b;
-  --pop: #9bc0f3;
+  --text: #ae8994;
+  --text-50: #0f0a0c;
+  --text-100: #1e1518;
+  --text-200: #3d292f;
+  --text-300: #5b3e47;
+  --text-400: #79535e;
+  --text-500: #986776;
+  --text-600: #ac8691;
+  --text-700: #c1a4ad;
+  --text-800: #d6c2c8;
+  --text-900: #eae1e4;
+  --text-950: #f5f0f1;
+
+  --background: #101619;
+  --background-50: #0a0e10;
+  --background-100: #141b1f;
+  --background-200: #28373e;
+  --background-300: #3c525d;
+  --background-400: #506d7c;
+  --background-500: #63899c;
+  --background-600: #83a0af;
+  --background-700: #a2b8c3;
+  --background-800: #c1d0d7;
+  --background-900: #e0e7eb;
+  --background-950: #eff3f5;
+
+  --primary: #9e1f38;
+  --primary-50: #150408;
+  --primary-100: #2b080f;
+  --primary-200: #55111e;
+  --primary-300: #80192e;
+  --primary-400: #aa223d;
+  --primary-500: #d52a4c;
+  --primary-600: #dd5570;
+  --primary-700: #e67f94;
+  --primary-800: #eeaab7;
+  --primary-900: #f7d4db;
+  --primary-950: #fbeaed;
+
+  --secondary: #153c47;
+  --secondary-50: #061114;
+  --secondary-100: #0c2127;
+  --secondary-200: #17434f;
+  --secondary-300: #236476;
+  --secondary-400: #2f859d;
+  --secondary-500: #3ba7c4;
+  --secondary-600: #62b8d0;
+  --secondary-700: #89cadc;
+  --secondary-800: #b0dce8;
+  --secondary-900: #d8edf3;
+  --secondary-950: #ebf6f9;
+
+  --accent: #51c030;
+  --accent-50: #091405;
+  --accent-100: #11290a;
+  --accent-200: #235214;
+  --accent-300: #347a1f;
+  --accent-400: #45a329;
+  --accent-500: #57cc33;
+  --accent-600: #78d65c;
+  --accent-700: #9ae085;
+  --accent-800: #bcebad;
+  --accent-900: #ddf5d6;
+  --accent-950: #eefaeb;
 }
 
-button {
-  font-weight: bold;
-  text-transform: uppercase;
+body {
+  font-family: "Castoro";
+  font-weight: 400;
 }
 
-button:active {
-  transform: translateY(2px);
-  box-shadow: none;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Alegreya Sans SC";
+  font-weight: 700;
 }
 
 html {
-  scroll-behavior: smooth;
+  font-size: 100%;
 }
 
-.nav-link {
-  @apply relative inline-block text-accent transition-colors duration-300;
+h1 {
+  font-size: 3.053rem;
 }
 
-.nav-link::after {
-  @apply absolute bottom-0 left-0 h-[2px] w-full scale-x-0 bg-primary transition-transform duration-300;
-  content: "";
-  transform-origin: left;
+h2 {
+  font-size: 2.442rem;
 }
 
-.nav-link:hover::after {
-  @apply scale-x-100;
+h3 {
+  font-size: 1.954rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small {
+  font-size: 0.8rem;
 }
