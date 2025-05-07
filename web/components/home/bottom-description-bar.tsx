@@ -21,7 +21,7 @@ const Footer = () => {
 
       {/* Description */}
       <div className="flex-col justify-items-center justify-center md:justify-items-end">
-        <p>Robert Bonsall</p>
+        <p className="text-center">Robert Bonsall</p>
         <p className="text-center text-sm md:text-base flex-wrap">
           Pennsylvania Photographer serving couples in PA, NY, NJ, MD, DE, and
           destinations.
