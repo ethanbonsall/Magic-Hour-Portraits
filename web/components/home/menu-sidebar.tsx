@@ -23,7 +23,7 @@ const MenuSidebar = () => {
       </button>
 
       <div
-        className={`fixed top-0 right-0 h-full bg-secondary text-text z-40 p-8 flex justify-center flex-col gap-8 transition-transform ease-in-out
+        className={`fixed top-0 right-0 overflow-hidden h-full bg-secondary text-text z-40 p-8 flex justify-center flex-col gap-8 transition-transform ease-in-out
           ${
             isMobile
               ? "w-full duration-500"
@@ -42,6 +42,7 @@ const MenuSidebar = () => {
         </button>
         <div className="self-center justify-center">
           <nav className="flex flex-col gap-6 text-5xl md:text-4xl 2xl:text-6xl font-bold">
+            <hr className="border-secondary border-t-2" />
             <Link href="/" onClick={toggleMenu}>
               Home
             </Link>
@@ -60,6 +61,7 @@ const MenuSidebar = () => {
             <Link href="/contact" onClick={toggleMenu}>
               Contact
             </Link>
+            <hr className="border-secondary border-t-2" />
           </nav>
         </div>
       </div>
