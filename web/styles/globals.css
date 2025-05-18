@@ -68,6 +68,8 @@
   --accent-800: #235214;
   --accent-900: #11290a;
   --accent-950: #091405;
+
+  --dark: #101619;
 }
 .dark {
   --text: #ae8994;
@@ -134,6 +136,8 @@
   --accent-800: #bcebad;
   --accent-900: #ddf5d6;
   --accent-950: #eefaeb;
+
+  --dark: #101619;
 }
 
 body {
