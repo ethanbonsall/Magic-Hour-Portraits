@@ -79,7 +79,7 @@ const PortfolioPage = () => {
                   <img
                     src={wedding.previewUrl}
                     alt={wedding.Title}
-                    className="w-64  object-cover rounded-md"
+                    className="w-64 object-cover rounded-md"
                   />
                 ) : (
                   <div className="w-64 h-64 bg-gray-300 rounded-md flex items-center justify-center">
