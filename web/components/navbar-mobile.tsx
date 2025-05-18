@@ -42,7 +42,7 @@ const NavBarMobile = () => {
 
       {/* Slide-Out Menu */}
       <div
-        className={`fixed top-0 right-0 h-full w-full justify-center bg-secondary text-text transform ${
+        className={`fixed top-0 right-0 h-full w-full justify-center bg-secondary text-text transform overflow-hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-500 ease-in-out z-50 p-8 flex flex-col gap-8`}
       >
