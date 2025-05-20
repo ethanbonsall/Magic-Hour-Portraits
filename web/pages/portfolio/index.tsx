@@ -7,26 +7,11 @@ import { useEffect, useState } from "react";
 import { fetchWedding, WeddingEntry } from "@/lib/fetchWeddings";
 import { EngagementEntry, fetchEngagement } from "@/lib/fetchEngagements";
 import { fetchFamilies, FamilyEntry } from "@/lib/fetchFamilies";
+import { MoveRight } from "lucide-react";
 
-/*On the portfolio page I want it to say at the top 
-Signature Galleries with a faded image or two as an underlay.  Use the wording. 
-
-A selection of couples , families and elegant events. 
-
-Then. 
-Featured weddings with six panels of six different weddings. When you click on the image it takes you to a separate page of 20 30 images in a three across block style. 
-
-Then. 
-Featured engagements
-With six panels etc. again when you select the image of the event it takes you to a separate page. 
-
-Then. 
-Featured Families 
-Same thing. 
-
-Make sure there is an inquiry  button with an image and a paragraph of information. */
 const signature1 = "/assets/wedding/signature-event.jpg";
 const signature2 = "/assets/wedding/signature-event2.jpg";
+const inquire = "/assets/inquire.jpg";
 
 const PortfolioPage = () => {
   const [weddings, setWeddings] = useState<WeddingEntry[]>([]);
@@ -66,85 +51,169 @@ const PortfolioPage = () => {
           </div>
         </div>
         <div className="flex flex-col bg-background md:items-center md:justify-center py-16 px-4 md:p-16">
-          <div className="flex flex-row md:w-1/2 gap-4 md:px-4">
+          <div className="flex flex-row md:w-3/4 gap-4 md:px-4">
             <h2 className="text-text 2xl:text-6xl md:whitespace-nowrap text-start md:text-center">
               Featured Weddings
             </h2>
             <hr className="hidden md:block flex-grow border-1 rounded-md self-center border-text"></hr>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-1/2 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
             {weddings.map((wedding, idx) => (
-              <div key={idx} className="text-center space-y-2">
+              <div key={idx} className="text-start space-y-2">
                 {wedding.previewUrl ? (
-                  <img
-                    src={wedding.previewUrl}
-                    alt={wedding.Title}
-                    className="w-64 object-cover rounded-md"
-                  />
+                  <a
+                    href={`/portfolio/weddings/${encodeURIComponent(
+                      wedding.Title
+                    )}`}
+                  >
+                    <img
+                      src={wedding.previewUrl}
+                      alt={wedding.Title}
+                      className="object-cover rounded-md"
+                    />
+                  </a>
                 ) : (
-                  <div className="w-64 h-64 bg-gray-300 rounded-md flex items-center justify-center">
+                  <div className="bg-background rounded-md flex items-center justify-center">
                     <span>No image</span>
                   </div>
                 )}
-                <p className="text-sm text-text/80">{wedding.Location}</p>
-                <h3 className="text-lg font-semibold">{wedding.Title}</h3>
+                <h3 className="text-xl text-text pt-4 font-light">
+                  {wedding.Location}
+                </h3>
+                <h2 className="font-light text-text">{wedding.Title}</h2>
               </div>
             ))}
           </div>
         </div>
         <div className="flex flex-col bg-background md:items-center md:justify-center py-16 px-4 md:p-16">
-          <div className="flex flex-row md:w-1/2 gap-4 md:px-4">
+          <div className="flex flex-row md:w-3/4 gap-4 md:px-4">
             <h2 className="text-text 2xl:text-6xl md:whitespace-nowrap text-start md:text-center">
               Featured Engagements
             </h2>
             <hr className="hidden md:block flex-grow border-1 rounded-md self-center border-text"></hr>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-1/2 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
             {engagements.map((item, idx) => (
-              <div key={idx} className="text-center space-y-2">
+              <div key={idx} className="text-start space-y-2">
                 {item.previewUrl ? (
-                  <img
-                    src={item.previewUrl}
-                    alt={item.Title}
-                    className="w-64 h-64 object-cover rounded-md"
-                  />
+                  <a
+                    href={`/portfolio/engagements/${encodeURIComponent(
+                      item.Title
+                    )}`}
+                  >
+                    <img
+                      src={item.previewUrl}
+                      alt={item.Title}
+                      className="object-cover rounded-md"
+                    />
+                  </a>
                 ) : (
-                  <div className="w-64 h-64 bg-gray-300 rounded-md flex items-center justify-center">
+                  <div className="bg-background rounded-md flex items-center justify-center">
                     <span>No image</span>
                   </div>
                 )}
-                <p className="text-sm text-text/80">{item.Location}</p>
-                <h3 className="text-lg font-semibold">{item.Title}</h3>
+                <h3 className="text-xl text-text pt-4 font-light">
+                  {item.Location}
+                </h3>
+                <h2 className="font-light text-text">{item.Title}</h2>
               </div>
             ))}
           </div>
         </div>
         <div className="flex flex-col bg-background md:items-center md:justify-center py-16 px-4 md:p-16">
-          <div className="flex flex-row md:w-1/2 gap-4 md:px-4">
+          <div className="flex flex-row md:w-3/4 gap-4 md:px-4">
             <h2 className="text-text 2xl:text-6xl md:whitespace-nowrap text-start md:text-center">
               Featured Families
             </h2>
             <hr className="hidden md:block flex-grow border-1 rounded-md self-center border-text"></hr>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-1/2 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
             {families.map((item, idx) => (
-              <div key={idx} className="text-center space-y-2">
+              <div key={idx} className="text-start space-y-2">
                 {item.previewUrl ? (
-                  <img
-                    src={item.previewUrl}
-                    alt={item.Title}
-                    className="w-64 h-64 object-cover rounded-md"
-                  />
+                  <a
+                    href={`/portfolio/families/${encodeURIComponent(
+                      item.Title
+                    )}`}
+                  >
+                    <img
+                      src={item.previewUrl}
+                      alt={item.Title}
+                      className=" object-cover rounded-md"
+                    />
+                  </a>
                 ) : (
-                  <div className="w-64 h-64 bg-gray-300 rounded-md flex items-center justify-center">
+                  <div className="bg-background rounded-md flex items-center justify-center">
                     <span>No image</span>
                   </div>
                 )}
-                <p className="text-sm text-text/80">{item.Location}</p>
-                <h3 className="text-lg font-semibold">{item.Title}</h3>
+                <h3 className="text-xl text-text pt-4 font-light">
+                  {item.Location}
+                </h3>
+                <h2 className="font-light text-text">{item.Title}</h2>
               </div>
             ))}
           </div>
+        </div>
+        <div className="hidden sm:flex h-screen justify-start items-center pl-80 bg-primary-100">
+          <div className="relative h-3/4">
+            <img src={inquire} className="h-full" />
+
+            <h1
+              className="absolute text-text-800 text-8xl font-light"
+              style={{ top: "5%", right: "-50%" }}
+            >
+              Inquire
+            </h1>
+
+            <h2
+              className="absolute text-text-800 text-4xl"
+              style={{ top: "23%", right: "-70%" }}
+            >
+              to work together
+            </h2>
+
+            <p
+              className="absolute text-text-800 text-2xl w-[40ch]"
+              style={{ top: "40%", left: "113%" }}
+            >
+              You’ve swiped through my website and have fallen in love with my
+              experience and style. Now it’s time to chat about your wedding day
+              and how I can best support you, photography included! Fill out my
+              quick inquiry form and let’s get started!
+            </p>
+
+            <button
+              className="absolute text-text-800 text-2xl flex justify-center items-center gap-2 w-[15ch] text-center bg-secondary-200 h-12"
+              style={{ top: "80%", left: "113%" }}
+              onClick={() => (window.location.href = "/contact")}
+            >
+              Contact me <MoveRight />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile layout */}
+        <div className="flex sm:hidden flex-col items-center gap-6 p-4 bg-primary-100">
+          <img src={inquire} className="w-full rounded-md" />
+
+          <div className="text-center space-y-4">
+            <h1 className="text-5xl text-text-800 font-light">Inquire</h1>
+            <h2 className="text-2xl text-text-800">to work together</h2>
+            <p className="text-lg text-text-800 max-w-md mx-auto">
+              You’ve swiped through my website and have fallen in love with my
+              experience and style. Now it’s time to chat about your wedding day
+              and how I can best support you, photography included! Fill out my
+              quick inquiry form and let’s get started!
+            </p>
+          </div>
+
+          <button
+            className="text-text-800 text-lg flex justify-center items-center gap-2 px-6 py-3 bg-secondary-200 rounded-md"
+            onClick={() => (window.location.href = "/contact")}
+          >
+            Contact me <MoveRight />
+          </button>
         </div>
       </div>
     </div>

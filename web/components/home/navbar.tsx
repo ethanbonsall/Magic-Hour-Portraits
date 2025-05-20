@@ -32,52 +32,52 @@ const NavBar = () => {
 
           <div className="flex items-center gap-12">
             <div className="hidden md:flex gap-6 text-lg font-medium">
-              <Link href="/" className="hover:text-gray-300 transition">
+              <Link href="/" className="hover:text-text-900 transition">
                 HOME
               </Link>
-              <Link href="/about" className="hover:text-gray-300 transition">
+              <Link href="/about" className="hover:text-text-900 transition">
                 ABOUT
               </Link>
               <Link
                 href="/portfolio"
-                className="hover:text-gray-300 transition"
+                className="hover:text-text-900 transition"
               >
                 PORTFOLIO
               </Link>
               <Link
                 href="/experience"
-                className="hover:text-gray-300 transition"
+                className="hover:text-text-900 transition"
               >
                 EXPERIENCE
               </Link>
-              <Link href="/blog" className="hover:text-gray-300 transition">
+              <Link href="/blog" className="hover:text-text-900 transition">
                 BLOG
               </Link>
-              <Link href="/contact" className="hover:text-gray-300 transition">
+              <Link href="/contact" className="hover:text-text-900 transition">
                 CONTACT
               </Link>
             </div>
 
             <div className="flex gap-4">
               <Link
-                href="https://www.instagram.com/yourusername"
+                href="https://www.instagram.com/magichourportrait"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-300"
+                className="hover:text-text-900"
               >
                 <SiInstagram className="w-5 h-5" />
               </Link>
               <Link
-                href="https://www.facebook.com/yourusername"
+                href="https://www.facebook.com/profile.php?id=61554124045860"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-300"
+                className="hover:text-text-900"
               >
                 <SiFacebook className="w-5 h-5" />
               </Link>
               <Link
-                href="mailto:you@example.com"
-                className="hover:text-gray-300"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=robertbonsall@magichourportraits.com"
+                className="hover:text-text-900"
               >
                 <Mail className="w-5 h-5" />
               </Link>
