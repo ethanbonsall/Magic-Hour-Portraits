@@ -34,14 +34,14 @@ const PortfolioPage = () => {
         <div className="h-screen bg-dark flex flex-row justify-items-center justify-center align-center">
           <img
             src={signature1}
-            className=" w-full md:w-[50vw]  object-cover filter blur-sm opacity-30"
+            className=" w-full md:w-[50vw] object-cover filter blur-sm opacity-30"
           />
           <img
             src={signature2}
             className=" hidden md:block md:w-[50vw] object-cover filter blur-sm opacity-30"
           />
           <div className="absolute flex flex-col gap-6 top-1/2 mx-4 w-3/4 md:w-[40rem]">
-            <h1 className="text-white text-6xl md:text-8xl 2xl:text-9xl z-30 text-center font-thin ">
+            <h1 className="text-white text-6xl md:text-8xl 2xl:text-9xl z-30 text-center self-center break-words whitespace-normal leading-tight font-thin ">
               SIGNATURE GALLERIES
             </h1>
             <hr className="border-1 rounded-md"></hr>
