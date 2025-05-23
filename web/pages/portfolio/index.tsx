@@ -57,19 +57,20 @@ const PortfolioPage = () => {
             </h2>
             <hr className="hidden md:block flex-grow border-1 rounded-md self-center border-text"></hr>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
             {weddings.map((wedding, idx) => (
               <div key={idx} className="text-start space-y-2">
                 {wedding.previewUrl ? (
                   <a
-                    href={`/portfolio/weddings/${encodeURIComponent(
-                      wedding.Title
+                    href={`/portfolio/weddings/${wedding.Title.replace(
+                      /\s+/g,
+                      "-"
                     )}`}
                   >
                     <img
                       src={wedding.previewUrl}
                       alt={wedding.Title}
-                      className="object-cover rounded-md"
+                      className="object-cover w-full h-auto md:w-[22dvw] md:h-[30dvw]"
                     />
                   </a>
                 ) : (
@@ -92,19 +93,20 @@ const PortfolioPage = () => {
             </h2>
             <hr className="hidden md:block flex-grow border-1 rounded-md self-center border-text"></hr>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
             {engagements.map((item, idx) => (
               <div key={idx} className="text-start space-y-2">
                 {item.previewUrl ? (
                   <a
-                    href={`/portfolio/engagements/${encodeURIComponent(
-                      item.Title
+                    href={`/portfolio/engagements/${item.Title.replace(
+                      /\s+/g,
+                      "-"
                     )}`}
                   >
                     <img
                       src={item.previewUrl}
                       alt={item.Title}
-                      className="object-cover rounded-md"
+                      className="object-cover w-full h-auto md:w-[22dvw] md:h-[30dvw]"
                     />
                   </a>
                 ) : (
@@ -127,19 +129,20 @@ const PortfolioPage = () => {
             </h2>
             <hr className="hidden md:block flex-grow border-1 rounded-md self-center border-text"></hr>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-16 gap-16 px-4 md:w-3/4 justify-items-center">
             {families.map((item, idx) => (
               <div key={idx} className="text-start space-y-2">
                 {item.previewUrl ? (
                   <a
-                    href={`/portfolio/families/${encodeURIComponent(
-                      item.Title
+                    href={`/portfolio/families/${item.Title.replace(
+                      /\s+/g,
+                      "-"
                     )}`}
                   >
                     <img
                       src={item.previewUrl}
                       alt={item.Title}
-                      className=" object-cover rounded-md"
+                      className=" object-cover  w-full h-auto md:w-[22dvw] md:h-[30dvw] "
                     />
                   </a>
                 ) : (
