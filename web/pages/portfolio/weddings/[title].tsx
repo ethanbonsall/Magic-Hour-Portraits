@@ -47,7 +47,7 @@ export default function WeddingPage() {
           {wedding.Location}
         </h2>
 
-        <div className="self-center w-3/4">
+        <div className="mx-auto md:self-center w-3/4">
           <GalleryImages folderPath={wedding.Images} />
         </div>
       </div>
