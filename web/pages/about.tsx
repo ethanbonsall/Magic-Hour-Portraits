@@ -1,3 +1,4 @@
+import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/home/navbar";
 import Head from "next/head";
 const AboutPage = () => {
@@ -12,6 +13,7 @@ const AboutPage = () => {
           About Page Here
         </h1>
       </div>
+      <Footer />
     </div>
   );
 };

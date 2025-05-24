@@ -8,6 +8,7 @@ import { fetchWedding, WeddingEntry } from "@/lib/fetchWeddings";
 import { EngagementEntry, fetchEngagement } from "@/lib/fetchEngagements";
 import { fetchFamilies, FamilyEntry } from "@/lib/fetchFamilies";
 import { MoveRight } from "lucide-react";
+import Footer from "@/components/home/bottom-description-bar";
 
 const signature1 = "/assets/wedding/signature-event.jpg";
 const signature2 = "/assets/wedding/signature-event2.jpg";
@@ -219,6 +220,7 @@ const PortfolioPage = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
