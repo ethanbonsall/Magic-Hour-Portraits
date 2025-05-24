@@ -158,7 +158,7 @@ const PortfolioPage = () => {
             ))}
           </div>
         </div>
-        <div className="hidden sm:flex h-screen justify-start items-center pl-80 bg-primary-100">
+        <div className="hidden sm:flex h-screen justify-start items-center md:px-[22%] 2xl:px-[25%] bg-primary-100">
           <div className="relative h-3/4">
             <img src={inquire} className="h-full" />
 

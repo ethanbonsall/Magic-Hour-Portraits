@@ -31,15 +31,15 @@ export function GalleryImages({ folderPath }: Props) {
   }, [folderPath]);
 
   return (
-    <>
+    <div className="columns-1 md:columns-2 lg:columns-3 gap-4">
       {imageUrls.map((url, idx) => (
         <img
           key={idx}
           src={url}
           alt={`Gallery Image ${idx}`}
-          className="w-full h-[300px] object-cover rounded shadow-md"
+          className="w-full rounded shadow-md mb-4 break-inside-avoid"
         />
       ))}
-    </>
+    </div>
   );
 }
