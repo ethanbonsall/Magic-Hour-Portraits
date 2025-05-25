@@ -1,5 +1,5 @@
 import Footer from "@/components/home/bottom-description-bar";
-import NavBar from "@/components/home/navbar";
+import NavBar from "@/components/navbar";
 import Head from "next/head";
 const AboutPage = () => {
   return (

@@ -5,7 +5,7 @@ const magicHour = "/assets/magicHour.png";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-secondary justify-between text-text py-6 px-4 flex flex-col md:flex-row items-center gap-4 mt-16">
+    <footer className="w-full bg-secondary justify-between text-text py-6 px-4 flex flex-col md:flex-row items-center gap-4 ">
       {/* Logo */}
       <div className="flex flex-row items-center gap-3">
         <Image
