@@ -9,7 +9,7 @@ import LegacySection from "@/components/home/portrait-section";
 
 const Portfolio = () => {
   return (
-    <div className="bg-background flex flex-col items-center font-roboto min-h-screen">
+    <div className="bg-background flex flex-col items-center w-full font-roboto min-h-screen">
       <Head>
         <title>Magic Hour Portraits</title>
         <meta name="description" content="Magic Hour Portraits Portfolio" />

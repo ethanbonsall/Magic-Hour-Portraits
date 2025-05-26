@@ -72,7 +72,7 @@ const LegacySection = () => {
             <img
               src={carouselImages[getRelativeIndex(0)]}
               alt="Current"
-              className=" w-2/3 md:w-1/3 max-h-[600px] object-cover rounded-lg shadow-lg z-20 transition-all duration-500"
+              className=" w-full mt-20 md:mt-0 md:w-1/3 md:max-h-[600px] object-cover rounded-lg shadow-lg z-20 transition-all duration-500"
             />
             {/* Next Image */}
             <img

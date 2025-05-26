@@ -7,8 +7,8 @@ const rightImg = "/assets/home/right.jpg";
 
 const HomeExperienceSection = () => {
   return (
-    <section className="bg-background text-text py-20 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto flex flex-col items-center text-center gap-10">
+    <section className="bg-background w-full text-text py-20">
+      <div className="w-full flex flex-col items-center text-center gap-10">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">
           Romantic, elegant wedding photography
           <br className="hidden md:block" />
@@ -16,7 +16,7 @@ const HomeExperienceSection = () => {
         </h2>
 
         <div className="flex flex-row justify-center items-center gap-4 md:gap-6">
-          <div className="w-36 sm:w-48 md:w-52">
+          <div className="w-24 sm:w-36 md:w-52">
             <Image
               src={leftImg}
               alt="Left Image"
@@ -25,7 +25,7 @@ const HomeExperienceSection = () => {
               className="rounded shadow object-cover w-full h-auto"
             />
           </div>
-          <div className="w-52 sm:w-72 md:w-80">
+          <div className="w-36 sm:w-60 md:w-80">
             <Image
               src={middleImg}
               alt="Middle Image"
@@ -34,7 +34,7 @@ const HomeExperienceSection = () => {
               className="rounded shadow-xl object-cover w-full h-auto"
             />
           </div>
-          <div className="w-36 sm:w-48 md:w-52">
+          <div className="w-24 sm:w-36 md:w-52">
             <Image
               src={rightImg}
               alt="Right Image"
