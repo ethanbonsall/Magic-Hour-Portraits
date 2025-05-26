@@ -66,19 +66,19 @@ const LegacySection = () => {
             <img
               src={carouselImages[getRelativeIndex(-1)]}
               alt="Previous"
-              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90  transition-all duration-500"
+              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90 hidden md:block transition-all duration-500"
             />
             {/* Current Image */}
             <img
               src={carouselImages[getRelativeIndex(0)]}
               alt="Current"
-              className="w-1/3 max-h-[600px] object-cover rounded-lg shadow-lg z-20 transition-all duration-500"
+              className=" w-2/3 md:w-1/3 max-h-[600px] object-cover rounded-lg shadow-lg z-20 transition-all duration-500"
             />
             {/* Next Image */}
             <img
               src={carouselImages[getRelativeIndex(1)]}
               alt="Next"
-              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90  transition-all duration-500"
+              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90 hidden md:block transition-all duration-500"
             />
           </div>
 
