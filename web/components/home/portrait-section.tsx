@@ -45,7 +45,9 @@ const LegacySection = () => {
           <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4">
             Images that tell your story
             <br />
-            while reflecting its joy and charm
+            <span className=" hidden md:block">
+              while reflecting its joy and charm
+            </span>
           </h2>
         </div>
       </div>
@@ -61,7 +63,7 @@ const LegacySection = () => {
             <MoveLeft className="w-12 h-12 text-black" />
           </button>
 
-          <div className="flex gap-4 items-center justify-center w-full max-w-6xl px-4">
+          <div className="flex gap-4 items-start justify-center w-full max-w-6xl px-4">
             {/* Previous Image */}
             <img
               src={carouselImages[getRelativeIndex(-1)]}
