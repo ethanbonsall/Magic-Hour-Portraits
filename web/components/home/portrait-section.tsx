@@ -66,7 +66,7 @@ const LegacySection = () => {
             <img
               src={carouselImages[getRelativeIndex(-1)]}
               alt="Previous"
-              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90 hidden md:block transition-all duration-500"
+              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90  transition-all duration-500"
             />
             {/* Current Image */}
             <img
@@ -78,7 +78,7 @@ const LegacySection = () => {
             <img
               src={carouselImages[getRelativeIndex(1)]}
               alt="Next"
-              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90 hidden md:block transition-all duration-500"
+              className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90  transition-all duration-500"
             />
           </div>
 

@@ -12,10 +12,10 @@ const HomeExperienceSection = () => {
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">
           Romantic, elegant wedding photography
           <br className="hidden md:block" />
-          <span className="italic">captured on digital and film</span>
+          <span className="italic"> captured on digital and film</span>
         </h2>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6">
+        <div className="flex flex-row justify-center items-center gap-4 md:gap-6">
           <div className="w-36 sm:w-48 md:w-52">
             <Image
               src={leftImg}
@@ -47,7 +47,7 @@ const HomeExperienceSection = () => {
 
         <p className="max-w-3xl text-base md:text-lg leading-relaxed">
           Pulling off a once-in-a-lifetime event like your wedding comes with
-          its share of stress. But at{" "}
+          its share of stress. But at
           <span className="font-medium">Magic Hour Portraits</span>, I see it as
           an opportunity. It&apos;s why I&apos;m passionate about delivering a
           once-in-a-lifetime <em>experience</em>. From personal styling for your
