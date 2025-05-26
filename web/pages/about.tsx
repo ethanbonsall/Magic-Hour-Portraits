@@ -32,8 +32,8 @@ const AboutPage = () => {
                   Founder & Photographer, Magic Hour Portraits
                 </p>
               </div>
-              <div className="relative p-6 max-w-prose self-center  2xl:my-16 mb-8 before:absolute before:top-0 before:left-0 before:w-10 before:h-10 before:border-t-4 before:border-l-4 before:border-text after:absolute after:bottom-0 after:right-0 after:w-10 after:h-10 after:border-b-4 after:border-r-4 after:border-text">
-                <p className="text-base md:text-lg 2xl:text-xl  leading-relaxed">
+              <div className="relative p-6 max-w-prose self-center 2xl:my-16 mb-8 before:absolute before:top-0 before:left-0 before:w-10 before:h-10 before:border-t-4 before:border-l-4 before:border-text after:absolute after:bottom-0 after:right-0 after:w-10 after:h-10 after:border-b-4 after:border-r-4 after:border-text">
+                <p className="text-base md:text-lg 2xl:text-xl leading-relaxed">
                   From the moment he held his first Voigtländer camera at age
                   14, Robert Bonsall knew photography would shape his life. That
                   passion led him to his first job at Ritz Camera, where he

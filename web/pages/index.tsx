@@ -3,6 +3,9 @@ import NavBar from "../components/home/navbar";
 import Experience from "@/components/home/experience-section";
 import BottomBar from "@/components/home/bottom-description-bar";
 import Head from "next/head";
+import AboutSection from "@/components/home/about-section";
+import ConsultationSection from "@/components/home/consultation";
+import LegacySection from "@/components/home/portrait-section";
 
 const Portfolio = () => {
   return (
@@ -15,6 +18,9 @@ const Portfolio = () => {
       <NavBar />
       <Home />
       <Experience />
+      <LegacySection />
+      <AboutSection />
+      <ConsultationSection />
       <BottomBar />
     </div>
   );
