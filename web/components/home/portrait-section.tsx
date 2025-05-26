@@ -104,10 +104,10 @@ const LegacySection = () => {
           butterflies are gone, a legacy of love and joy remains in its place.
         </p>
         <a
-          href="/contact"
+          href="/portfolio"
           className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-md text-sm md:text-base font-medium transition hover:bg-primary/90"
         >
-          Let’s Make Magic →
+          View Galleries →
         </a>
       </div>
     </section>
