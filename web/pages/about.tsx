@@ -64,13 +64,13 @@ const AboutPage = () => {
                 <img
                   src={about}
                   alt="Robert"
-                  className="w-full h-[300px] md:h-[360px] lg:h-[480px] xl:h-[600px] 2xl:h-[700px] object-cover mb-60 ml-12 object-bottom rounded shadow"
+                  className="w-3/4 md:w-full  md:h-[360px] lg:h-[480px] xl:h-[600px] 2xl:h-[700px] object-cover mb-60 ml-12 object-bottom rounded shadow"
                 />
 
                 <img
                   src={about2}
                   alt="Robert2"
-                  className="absolute bottom-32 md:bottom-12 lg:bottom-0 -left-16 -translate-y-1/2 w-2/3 object-cover rounded shadow border-4 border-background"
+                  className="absolute bottom-16 md:bottom-12 lg:bottom-0 left-16 md:-left-16 -translate-y-1/2 w-2/3 object-cover rounded shadow border-4 border-background"
                 />
               </div>
             </div>
