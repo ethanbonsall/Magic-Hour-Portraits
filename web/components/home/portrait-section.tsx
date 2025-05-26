@@ -32,7 +32,7 @@ const LegacySection = () => {
   return (
     <section className="w-full bg-background text-black overflow-hidden">
       {/* Top Parallax Header */}
-      <div className="relative h-[60vh] flex items-center justify-center text-center px-6">
+      <div className="relative h-screen flex items-center justify-center text-center mb-20 px-6">
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
@@ -74,7 +74,7 @@ const LegacySection = () => {
             <img
               src={carouselImages[getRelativeIndex(0)]}
               alt="Current"
-              className=" w-full mt-20 md:mt-0 md:w-1/3 md:max-h-[600px] object-cover rounded-lg shadow-lg z-20 transition-all duration-500"
+              className=" w-full pt-20 md:pt-0 md:w-1/3 md:max-h-[600px] object-cover rounded-lg shadow-lg z-20 transition-all duration-500"
             />
             {/* Next Image */}
             <img
