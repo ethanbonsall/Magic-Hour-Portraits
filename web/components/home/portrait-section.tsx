@@ -45,9 +45,7 @@ const LegacySection = () => {
           <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4">
             Images that tell your story
             <br />
-            <span className=" hidden md:block">
-              while reflecting its joy and charm
-            </span>
+            while reflecting its joy and charm
           </h2>
         </div>
       </div>
