@@ -16,22 +16,24 @@ const AboutPage = () => {
           <div className="min-h-screen bg-background flex flex-col md:flex-row justify-between ">
             <div className="flex-col flex text-text w-full md:w-1/2 gap-2">
               <div className="w-3/5">
-                <h2 className="text-2xl lg:text-3xl xl:text-4xl  font-bold text-center mt-6 text-text">
+                <h2 className="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center mt-6 text-text">
                   Dedicated To Capturing
                 </h2>
               </div>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl text-center">
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-center">
                 Moments You Can Feel
               </h1>
               <hr className="border-text mx-[1dvw]"></hr>
               <div className="mx-8">
-                <p className="text-4xl font-bold">Robert Bonsall</p>
-                <p className="text-xl italic mb-4">
+                <p className="text-4xl 2xl:text-5xl font-bold">
+                  Robert Bonsall
+                </p>
+                <p className="text-xl 2xl:text-2xl italic mb-4">
                   Founder & Photographer, Magic Hour Portraits
                 </p>
               </div>
-              <div className="relative p-6 max-w-prose self-center mb-8 before:absolute before:top-0 before:left-0 before:w-10 before:h-10 before:border-t-4 before:border-l-4 before:border-text after:absolute after:bottom-0 after:right-0 after:w-10 after:h-10 after:border-b-4 after:border-r-4 after:border-text">
-                <p className="text-base md:text-lg leading-relaxed">
+              <div className="relative p-6 max-w-prose self-center  2xl:my-16 mb-8 before:absolute before:top-0 before:left-0 before:w-10 before:h-10 before:border-t-4 before:border-l-4 before:border-text after:absolute after:bottom-0 after:right-0 after:w-10 after:h-10 after:border-b-4 after:border-r-4 after:border-text">
+                <p className="text-base md:text-lg 2xl:text-xl  leading-relaxed">
                   From the moment he held his first Voigtländer camera at age
                   14, Robert Bonsall knew photography would shape his life. That
                   passion led him to his first job at Ritz Camera, where he
@@ -62,7 +64,7 @@ const AboutPage = () => {
                 <img
                   src={about}
                   alt="Robert"
-                  className="w-full h-[300px] md:h-[360px] lg:h-[480px] xl:h-[600px] 2xl:h-[650px] object-cover mb-60 ml-12 object-bottom rounded shadow"
+                  className="w-full h-[300px] md:h-[360px] lg:h-[480px] xl:h-[600px] 2xl:h-[700px] object-cover mb-60 ml-12 object-bottom rounded shadow"
                 />
 
                 <img
