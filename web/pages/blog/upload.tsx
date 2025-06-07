@@ -45,8 +45,12 @@ const UploadBlogPost: React.FC = () => {
         continue;
       }
 
-      const publicURL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${filePath}`;
-      urls.push(publicURL);
+      const { data: publicData } = supabase.storage
+        .from("blog")
+        .getPublicUrl(filePath);
+      if (publicData?.publicUrl) {
+        urls.push(publicData.publicUrl);
+      }
     }
 
     setUploadLinks(urls);
