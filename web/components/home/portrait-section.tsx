@@ -29,21 +29,28 @@ const LegacySection = () => {
     return (index + offset + carouselImages.length) % carouselImages.length;
   };
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [offsetY, setOffsetY] = useState(0);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      const scrollTop = window.scrollY;
-      const sectionTop = sectionRef.current.offsetTop;
+    let animationFrameId: number;
 
-      // Only calculate parallax when the section is in view
-      const distanceFromTop = scrollTop - sectionTop;
-      setOffsetY(distanceFromTop);
+    const handleScroll = () => {
+      if (!sectionRef.current || !bgRef.current) return;
+
+      const sectionTop = sectionRef.current.offsetTop;
+      const scrollTop = window.scrollY;
+      const relativeY = scrollTop - sectionTop;
+
+      animationFrameId = requestAnimationFrame(() => {
+        bgRef.current!.style.transform = `translateY(${relativeY * 0.3}px)`;
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return (
@@ -69,20 +76,20 @@ const LegacySection = () => {
           </h2>
         </div>
       </div>
-      <div className="relative h-screen flex md:hidden items-center justify-center text-center mb-20 px-6">
-        {/* Simulated Parallax Background */}
+      <div className="relative h-screen flex items-center justify-center text-center mb-20 px-6">
+        {/* Parallax Background */}
         <div
+          ref={bgRef}
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/assets/wedding/signature-event2.jpg')",
-            transform: `translateY(${offsetY * 0.3}px)`,
             filter: "blur(4px)",
             opacity: 0.5,
             willChange: "transform",
           }}
         ></div>
 
-        {/* Foreground Content */}
+        {/* Foreground Text */}
         <div className="relative z-10 max-w-4xl">
           <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4">
             Images that tell your story
@@ -114,7 +121,7 @@ const LegacySection = () => {
             <img
               src={carouselImages[getRelativeIndex(0)]}
               alt="Current"
-              className=" w-full pt-20 md:pt-0 md:w-1/3 md:max-h-[600px] object-cover rounded-lg shadow-lg z-20 transition-all duration-500"
+              className=" w-full pt-20 md:pt-0 md:w-1/3 md:max-h-[600px] object-cover rounded-lg shadow-none md:shadow-lg z-20 transition-all duration-500"
             />
             {/* Next Image */}
             <img
