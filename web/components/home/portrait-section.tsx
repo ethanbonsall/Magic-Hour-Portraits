@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MoveLeft, MoveRight } from "lucide-react";
 
 const carouselImages = [
@@ -28,11 +28,31 @@ const LegacySection = () => {
   const getRelativeIndex = (offset: number) => {
     return (index + offset + carouselImages.length) % carouselImages.length;
   };
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [offsetY, setOffsetY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      const scrollTop = window.scrollY;
+      const sectionTop = sectionRef.current.offsetTop;
+
+      // Only calculate parallax when the section is in view
+      const distanceFromTop = scrollTop - sectionTop;
+      setOffsetY(distanceFromTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <section className="w-full bg-background text-black overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="w-full bg-background text-black overflow-hidden"
+    >
       {/* Top Parallax Header */}
-      <div className="relative h-screen flex items-center justify-center text-center mb-20 px-6">
+      <div className="hidden md:flex relative h-[80vh] items-center justify-center text-center mb-20 px-6">
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
@@ -41,6 +61,28 @@ const LegacySection = () => {
             opacity: 0.5,
           }}
         ></div>
+        <div className="relative z-10 max-w-4xl">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4">
+            Images that tell your story
+            <br />
+            while reflecting its joy and charm
+          </h2>
+        </div>
+      </div>
+      <div className="relative h-screen flex md:hidden items-center justify-center text-center mb-20 px-6">
+        {/* Simulated Parallax Background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/assets/wedding/signature-event2.jpg')",
+            transform: `translateY(${offsetY * 0.3}px)`,
+            filter: "blur(4px)",
+            opacity: 0.5,
+            willChange: "transform",
+          }}
+        ></div>
+
+        {/* Foreground Content */}
         <div className="relative z-10 max-w-4xl">
           <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4">
             Images that tell your story
