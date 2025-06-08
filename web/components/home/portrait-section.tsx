@@ -76,7 +76,7 @@ const LegacySection = () => {
           </h2>
         </div>
       </div>
-      <div className="relative h-screen flex items-center justify-center text-center mb-20 px-6">
+      <div className="relative h-screen md:hidden flex items-center justify-center text-center mb-20 px-6">
         {/* Parallax Background */}
         <div
           ref={bgRef}
