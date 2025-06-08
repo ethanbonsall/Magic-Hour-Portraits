@@ -11,12 +11,14 @@ const localPhotos = [
   "/assets/header/header1.jpg",
   "/assets/header/header2.jpg",
   "/assets/header/header3.jpg",
+  "/assets/header/header4.jpg",
 ];
 
 const mobilePhotos = [
   "/assets/header/mobile1.jpg",
   "/assets/header/mobile2.jpg",
   "/assets/header/mobile3.jpg",
+  "/assets/header/mobile4.jpg",
 ];
 
 const magicHourLogo = "/assets/magicHour.png";
