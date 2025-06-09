@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 const Investment = () => {
   return (
-    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left min-h-screen bg-background-200">
+    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left min-h-screen py-8 md:py-0 bg-background-200">
       <div className="w-full md:w-[50%] flex justify-center md:justify-end">
         <img
           src="assets/investment.jpg"
