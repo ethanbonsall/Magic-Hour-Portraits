@@ -11,7 +11,7 @@ const ExperiencePage = () => {
       <Head>
         <title>Experience</title>
       </Head>
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-4 md:mt-0">
         <NavBar />
         <Landing />
         <Description />

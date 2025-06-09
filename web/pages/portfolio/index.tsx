@@ -30,11 +30,10 @@ const PortfolioPage = () => {
       <Head>
         <title>Portfolio</title>
       </Head>
-      <div className="static">
-        <NavBar />
-      </div>
+
+      <NavBar />
       <div className="">
-        <div className="h-screen bg-dark flex flex-row justify-items-center justify-center align-center">
+        <div className="h-screen bg-dark flex flex-row justify-items-center mt-4 md:mt-0 justify-center align-center">
           <img
             src={signature1}
             className=" w-full md:w-[50vw] object-cover filter blur-sm opacity-30"

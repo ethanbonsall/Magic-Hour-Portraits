@@ -17,10 +17,8 @@ interface Props {
 }
 
 const BlogPostPage = ({ source, title }: Props) => (
-  <div className="bg-background text-text min-h-screen w-full ">
-    <div className="static">
-      <NavBar />
-    </div>
+  <div className="bg-background text-text min-h-screen w-full mt-4 md:mt-0">
+    <NavBar />
     <div className="max-w-4xl mx-auto px-6 py-12">
       <h1 className="text-4xl font-bold mb-8">{title}</h1>
       <div className="prose prose-neutral dark:prose-invert">
