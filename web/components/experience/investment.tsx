@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 const Investment = () => {
   return (
-    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left h-screen bg-background-200">
+    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left h-screen py-8 md:py-0 bg-background-200">
       <div className="w-[50%] flex justify-end">
         <img
           src="assets/investment.jpg"
@@ -22,7 +22,7 @@ const Investment = () => {
         </p>
         <p className="text-xl ml-0 md:ml-16">Investment begins at $2,399</p>
         <button
-          className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16 mb-8 text-xl"
+          className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16  text-xl"
           onClick={() => (window.location.href = "/contact")}
         >
           Inquire →
