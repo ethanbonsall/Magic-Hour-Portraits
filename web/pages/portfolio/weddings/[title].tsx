@@ -21,8 +21,8 @@ export default function WeddingPage() {
     });
   }, [titleParam]);
 
-  if (!titleParam) return <p></p>;
-  if (!wedding) return <p></p>;
+  if (!titleParam) return <p> </p>;
+  if (!wedding) return <p> </p>;
 
   return (
     <div className="bg-background text-text">
