@@ -6,7 +6,7 @@ const Investment = () => {
         <img
           src="assets/investment.jpg"
           alt="investment"
-          className="h-[40lvh] md:h-[80lvh] w-auto object-cover mb-4 md:mb-0"
+          className="h-[40lvh] md:h-[80lvh] w-auto object-cover my-4 md:mb-0"
         ></img>
       </div>
       <div className="w-full md:w-[50%] pl-0 md:pl-8 text-text space-y-8">
@@ -22,7 +22,7 @@ const Investment = () => {
         </p>
         <p className="text-xl ml-0 md:ml-16">Investment begins at $2,399</p>
         <button
-          className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16 text-xl"
+          className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16 mb-8 text-xl"
           onClick={() => (window.location.href = "/contact")}
         >
           Inquire →
