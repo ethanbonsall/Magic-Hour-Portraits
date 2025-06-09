@@ -12,6 +12,7 @@ const localPhotos = [
   "/assets/header/header2.jpg",
   "/assets/header/header3.jpg",
   "/assets/header/header4.jpg",
+  "/assets/header/header5.jpg",
 ];
 
 const mobilePhotos = [
