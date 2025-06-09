@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 const Investment = () => {
   return (
-    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left h-screen py-8 md:py-0 bg-background-200">
-      <div className="w-[50%] flex justify-end">
+    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left h-screen p-8 md:p-0 bg-background-200">
+      <div className="md:w-[50%] w-[80%] flex justify-end">
         <img
           src="assets/investment.jpg"
           alt="investment"
           className="h-[40lvh] md:h-[80lvh] w-auto object-cover my-4 md:mb-0"
-        ></img>
+        />
       </div>
       <div className="w-full md:w-[50%] pl-0 md:pl-8 text-text space-y-8">
         <div>
@@ -22,7 +22,7 @@ const Investment = () => {
         </p>
         <p className="text-xl ml-0 md:ml-16">Investment begins at $2,399</p>
         <button
-          className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16  text-xl"
+          className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16 text-xl"
           onClick={() => (window.location.href = "/contact")}
         >
           Inquire →
