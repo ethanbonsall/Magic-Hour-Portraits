@@ -72,8 +72,10 @@ const BlogPage = () => {
       <Head>
         <title>Blog</title>
       </Head>
-      <NavBar />
-      <div className="bg-background">
+      <div className="static">
+        <NavBar />
+      </div>
+      <div className="bg-background mt-4 md:mt-0">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 min-h-screen text-text">
           {posts.map((post) => (
             <div

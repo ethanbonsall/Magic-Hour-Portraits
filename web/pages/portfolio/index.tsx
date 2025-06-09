@@ -30,7 +30,9 @@ const PortfolioPage = () => {
       <Head>
         <title>Portfolio</title>
       </Head>
-      <NavBar />
+      <div className="static">
+        <NavBar />
+      </div>
       <div className="">
         <div className="h-screen bg-dark flex flex-row justify-items-center justify-center align-center">
           <img

@@ -10,12 +10,14 @@ const AboutPage = () => {
       <Head>
         <title>About</title>
       </Head>
-      <NavBar />
+      <div className="static">
+        <NavBar />
+      </div>
       <div>
         <div>
           <div className="min-h-screen bg-background flex flex-col md:flex-row justify-between ">
             <div className="flex-col flex text-text w-full md:w-1/2 gap-2">
-              <div className="w-3/5">
+              <div className="w-full md:w-3/5">
                 <h2 className="text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center mt-6 text-text">
                   Dedicated To Capturing
                 </h2>

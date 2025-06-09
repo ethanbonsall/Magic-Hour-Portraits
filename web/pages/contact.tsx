@@ -80,12 +80,13 @@ const ContactPage = () => {
 
   return (
     <div>
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background ">
         <Head>
           <title>Contact</title>
         </Head>
-        <NavBar />
-
+        <div className="static">
+          <NavBar />
+        </div>
         <main className="flex items-center justify-center px-4 pt-16 py-8">
           <div className="w-full max-w-3xl bg-primary-100 rounded-lg shadow-md p-6 sm:p-8 space-y-6">
             <div className="space-y-2">
