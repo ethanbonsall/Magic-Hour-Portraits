@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 const Investment = () => {
   return (
-    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left h-screen p-8 md:p-0 bg-background-200">
-      <div className="md:w-[50%] w-[80%] flex justify-end">
+    <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left h-screen md:p-0 bg-background-200">
+      <div className="md:w-[50%] w-full flex justify-center md:justify-end">
         <img
           src="assets/investment.jpg"
           alt="investment"
           className="h-[40lvh] md:h-[80lvh] w-auto object-cover my-4 md:mb-0"
         />
       </div>
-      <div className="w-full md:w-[50%] pl-0 md:pl-8 text-text space-y-8">
+      <div className="w-full md:w-[50%] pl-0 md:pl-8 text-text space-y-8 p-8">
         <div>
           <p className="text-6xl md:text-7xl xl:text-8xl font-thin">
             YOUR INVESTMENT
