@@ -6,7 +6,7 @@ const Investment = () => {
         <img
           src="assets/investment.jpg"
           alt="investment"
-          className="h-[40dvh] md:h-[80dvh] w-auto object-cover mb-4 md:mb-0"
+          className="h-[40lvh] md:h-[80lvh] w-auto object-cover mb-4 md:mb-0"
         ></img>
       </div>
       <div className="w-full md:w-[50%] pl-0 md:pl-8 text-text space-y-8">

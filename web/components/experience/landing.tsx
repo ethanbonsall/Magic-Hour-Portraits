@@ -48,7 +48,7 @@ const Landing = () => {
 
       {/* Foreground content */}
       <div className="flex flex-row z-30">
-        <div className="flex flex-col text-primary-700 text-center md:text-start justify-center md:justify-end mb-0 md:mb-[6dvh] lg:mb-[8dvh] xl:mb-[10dvh] 2xl:mb-[20dvh] gap-8 lg:gap-12 xl:gap-16 mr-0 md:mr-[10dvw]">
+        <div className="flex flex-col text-primary-700 text-center md:text-start justify-center md:justify-end mb-0 md:mb-[6lvh] lg:mb-[8lvh] xl:mb-[10lvh] 2xl:mb-[20lvh] gap-8 lg:gap-12 xl:gap-16 mr-0 md:mr-[10dvw]">
           <div>
             <h1 className="text-7xl lg:text-8xl xl:text-9xl font-thin">
               STORY
@@ -74,7 +74,7 @@ const Landing = () => {
         <img
           src="/assets/home/right.jpg"
           alt="Wedding"
-          className="h-[80dvh] hidden md:inline-block w-auto object-cover rounded-lg shadow-lg"
+          className="h-[80lvh] hidden md:inline-block w-auto object-cover rounded-lg shadow-lg"
         />
       </div>
     </div>
