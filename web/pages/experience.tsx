@@ -1,4 +1,5 @@
 import Description from "@/components/experience/description";
+import Investment from "@/components/experience/investment";
 import Landing from "@/components/experience/landing";
 import Process from "@/components/experience/process";
 import Footer from "@/components/home/bottom-description-bar";
@@ -15,11 +16,7 @@ const ExperiencePage = () => {
         <Landing />
         <Description />
         <Process />
-        <div className="h-screen bg-background flex justify-items-center justify-center align-center">
-          <h1 className="text-5xl md:text-6xl font-bold self-center text-center text-text">
-            UNDER CONSTRUCTION
-          </h1>
-        </div>
+        <Investment />
         <Footer />
       </div>
     </div>

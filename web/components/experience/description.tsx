@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 const Description = () => {
   return (
-    <div className="flex flex-row min-h-screen bg-primary-100 justify-evenly align-middle">
+    <div className="flex flex-col md:flex-row min-h-screen bg-primary-100 justify-evenly align-middle py-8 px-4 md:p-0">
       <img
         src="/assets/home/left.jpg"
         alt="Wedding"
-        className="h-[80dvh] hidden md:inline-block w-auto object-cover rounded-lg shadow-lg self-center"
+        className="h-[80dvh] w-auto object-cover rounded-lg shadow-lg self-center"
       />
       <div className="flex flex-col bg-primary-100 md:bg-secondary-400 w-full md:w-[50dvw] text-text md:text-white my-16">
         <hr className="inline-block md:hidden border-text mx-2"></hr>
