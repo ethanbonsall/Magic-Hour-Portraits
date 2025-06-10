@@ -20,7 +20,7 @@ const Investment = () => {
           Wedding collections are curated to ensure your big day is captured
           with all the gentle care and loving excitement it deserves.
         </p>
-        <p className="text-xl ml-0 md:ml-16">Investment begins at $2,399</p>
+        <p className="text-xl ml-0 md:ml-16">Investment begins at $2,799</p>
         <button
           className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16  text-xl"
           onClick={() => (window.location.href = "/contact")}

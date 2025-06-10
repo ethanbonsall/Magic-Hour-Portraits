@@ -48,11 +48,11 @@ const HomeExperienceSection = () => {
         <p className="max-w-3xl text-base md:text-lg leading-relaxed">
           Pulling off a once-in-a-lifetime event like your wedding comes with
           its share of stress. But at
-          <span className="font-medium">Magic Hour Portraits</span>, I see it as
-          an opportunity. It&apos;s why I&apos;m passionate about delivering a
-          once-in-a-lifetime <em>experience</em>. From personal styling for your
-          engagement session, to the images you&apos;ll look back on for years
-          to come (and not to mention some fun surprises along the way),
+          <span className="font-semibold"> Magic Hour Portraits</span>, I see it
+          as an opportunity. It&apos;s why I&apos;m passionate about delivering
+          a once-in-a-lifetime <em>experience</em>. From personal styling for
+          your engagement session, to the images you&apos;ll look back on for
+          years to come (and not to mention some fun surprises along the way),
           I&apos;m here to be your confidante, guide, and friend as you commit
           to your forever.
         </p>
