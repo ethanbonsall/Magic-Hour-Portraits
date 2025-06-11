@@ -103,6 +103,7 @@ export default function FormPage() {
       <Head>
         <title>Form</title>
       </Head>
+      {/* <!-- reCAPTCHA is used for spam protection. The badge has been hidden in compliance with Google's terms: https://developers.google.com/recaptcha/docs/faq --> */}
       <Script
         src={`https://www.google.com/recaptcha/api.js?render=6LfMWlwrAAAAAEsQHS_TmSkyBBk1-F4q2y5ESFzG`}
         strategy="afterInteractive"
