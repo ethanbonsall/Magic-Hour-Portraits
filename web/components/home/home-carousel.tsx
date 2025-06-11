@@ -22,7 +22,7 @@ const mobilePhotos = [
   "/assets/header/mobile4.jpg",
 ];
 
-const magicHourLogo = "/assets/magicHour.png";
+const magicHourLogo = "/assets/MagicHour.png";
 
 const Header = () => {
   const [index, setIndex] = useState(0);
@@ -59,7 +59,7 @@ const Header = () => {
           <img
             src={magicHourLogo}
             alt={"Magic Hour Portraits"}
-            className="w-[100px] h-[50px] md:w-[120px] md:h-[60px] lg:w-[140px] lg:h-[70px] xl:w-[160px] xl:h-[80px] 2xl:w-[200px] 2xl:h-[100px]"
+            className="w-[100px] h-auto md:w-[120px] md:h-auto lg:w-[140px] lg:h-auto xl:w-[160px] xl:h-auto 2xl:w-[200px] 2xl:h-auto"
           ></img>
         </div>
 

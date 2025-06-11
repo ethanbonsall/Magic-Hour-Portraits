@@ -1,4 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
 
 import { useState } from "react";
 import { format } from "date-fns";
@@ -39,6 +45,25 @@ const ContactPage = () => {
     }
 
     try {
+      const token = await window.grecaptcha.execute(
+        "6LfMWlwrAAAAAEsQHS_TmSkyBBk1-F4q2y5ESFzG",
+        {
+          action: "contact_form",
+        }
+      );
+
+      const verifyRes = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+
+      const verifyData = await verifyRes.json();
+      if (!verifyData.success || verifyData.score < 0.5) {
+        alert("reCAPTCHA verification failed. Please try again.");
+        return;
+      }
+
       await emailjs.send(
         "service_flvx1zh",
         "template_z4z0xpg",
@@ -64,7 +89,7 @@ const ContactPage = () => {
       setPriority("");
       setVacation("");
     } catch (error) {
-      console.error("Email send error:", error);
+      console.error("Error during form submission:", error);
       alert("Something went wrong. Please try again.");
     }
   };

@@ -32,15 +32,15 @@ const Landing = () => {
   return (
     <div
       ref={sectionRef}
-      className="relative h-screen bg-background flex items-center overflow-hidden justify-center text-start"
+      className="relative h-screen bg-background-500 flex items-center overflow-hidden justify-center text-start"
     >
       {/* Smooth parallax background */}
       <div
         ref={bgRef}
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-background-500 bg-center"
         style={{
           backgroundImage: "url('/assets/wedding/signature-event2.jpg')",
-          filter: "blur(4px)",
+          filter: "blur(6px)",
           opacity: 0.5,
           willChange: "transform",
         }}
@@ -48,7 +48,7 @@ const Landing = () => {
 
       {/* Foreground content */}
       <div className="flex flex-row z-30">
-        <div className="flex flex-col text-primary-700 text-center md:text-start justify-center md:justify-end mb-0 md:mb-[6lvh] lg:mb-[8lvh] xl:mb-[10lvh] 2xl:mb-[20lvh] gap-8 lg:gap-12 xl:gap-16 mr-0 md:mr-[10dvw]">
+        <div className="flex flex-col text-white text-center md:text-start justify-center md:justify-end mb-0 md:mb-[6lvh] lg:mb-[8lvh] xl:mb-[10lvh] 2xl:mb-[20lvh] gap-8 lg:gap-12 xl:gap-16 mr-0 md:mr-[10dvw]">
           <div>
             <h1 className="text-7xl lg:text-8xl xl:text-9xl font-thin">
               STORY

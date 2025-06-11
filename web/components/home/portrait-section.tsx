@@ -56,7 +56,7 @@ const LegacySection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-background text-black overflow-hidden"
+      className="w-full bg-background-600 text-black overflow-hidden"
     >
       {/* Top Parallax Header */}
       <div className="hidden md:flex relative h-[80vh] items-center justify-center text-center mb-20 px-6">
@@ -69,14 +69,14 @@ const LegacySection = () => {
           }}
         ></div>
         <div className="relative z-10 max-w-4xl">
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-4">
             Images that tell your story
             <br />
             while reflecting its joy and charm
           </h2>
         </div>
       </div>
-      <div className="relative h-screen md:hidden flex items-center justify-center text-center mb-20 px-6">
+      <div className="relative h-[75lvh] md:hidden flex items-center bg-background-600 justify-center text-center mb-20 px-6">
         {/* Parallax Background */}
         <div
           ref={bgRef}
@@ -91,7 +91,7 @@ const LegacySection = () => {
 
         {/* Foreground Text */}
         <div className="relative z-10 max-w-4xl">
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl text-white font-semibold mb-4">
             Images that tell your story
             <br />
             while reflecting its joy and charm
