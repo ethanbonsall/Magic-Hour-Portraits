@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
@@ -27,6 +27,7 @@ import Script from "next/script";
 
 import Head from "next/head";
 import { Textarea } from "@/components/ui/textarea";
+import { useRouter } from "next/router";
 const ContactPage = () => {
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState<Date | undefined>(undefined);
@@ -38,6 +39,27 @@ const ContactPage = () => {
   const [vision, setVision] = useState("");
   const [priority, setPriority] = useState("");
   const [vacation, setVacation] = useState("");
+  const router = useRouter();
+
+  useEffect(() => {
+    const cleanupRecaptcha = () => {
+      if (window.grecaptcha) {
+        delete window.grecaptcha;
+      }
+
+      const script = document.querySelector("script[src*='recaptcha/api.js']");
+      if (script) {
+        script.remove();
+      }
+    };
+
+    router.events.on("routeChangeStart", cleanupRecaptcha);
+
+    return () => {
+      router.events.off("routeChangeStart", cleanupRecaptcha);
+      cleanupRecaptcha();
+    };
+  }, [router]);
 
   const handleSend = async () => {
     if (!email || !names) {
@@ -106,6 +128,8 @@ const ContactPage = () => {
 
   return (
     <div>
+      {/* <!-- reCAPTCHA is used for spam protection. The badge has been hidden in compliance with Google's terms: https://developers.google.com/recaptcha/docs/faq --> */}
+
       <div className="min-h-screen bg-background mt-4 md:mt-0">
         <Head>
           <title>Contact</title>

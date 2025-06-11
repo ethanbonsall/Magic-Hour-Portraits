@@ -9,6 +9,8 @@ import NavBar from "@/components/navbar";
 import BottomBar from "@/components/home/bottom-description-bar";
 import Script from "next/script";
 import Head from "next/head";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function FormPage() {
   const [category, setCategory] = useState<
@@ -18,6 +20,28 @@ export default function FormPage() {
   const [rating, setRating] = useState(0);
   const [hovered, setHovered] = useState(0);
   const [review, setReview] = useState("");
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const cleanupRecaptcha = () => {
+      if (window.grecaptcha) {
+        delete window.grecaptcha;
+      }
+
+      const script = document.querySelector("script[src*='recaptcha/api.js']");
+      if (script) {
+        script.remove();
+      }
+    };
+
+    router.events.on("routeChangeStart", cleanupRecaptcha);
+
+    return () => {
+      router.events.off("routeChangeStart", cleanupRecaptcha);
+      cleanupRecaptcha();
+    };
+  }, [router]);
 
   const handleSubmit = async () => {
     if (!names || !review || !rating || !category) {

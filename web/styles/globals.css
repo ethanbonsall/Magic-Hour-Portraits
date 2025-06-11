@@ -181,3 +181,10 @@ h5 {
 small {
   font-size: 0.8rem;
 }
+
+/* styles/globals.css */
+.grecaptcha-badge {
+  z-index: -50 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
