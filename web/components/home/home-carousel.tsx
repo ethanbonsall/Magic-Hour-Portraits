@@ -22,7 +22,7 @@ const mobilePhotos = [
   "/assets/header/mobile4.jpg",
 ];
 
-const magicHourLogo = "/assets/MagicHour.png";
+const magicHourLogo = "/assets/magicHour.png";
 
 const Header = () => {
   const [index, setIndex] = useState(0);

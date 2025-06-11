@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-const magicHour = "/assets/MagicHour.png";
+const magicHour = "/assets/magicHour.png";
 
 const NavBarMobile = () => {
   const [isOpen, setIsOpen] = useState(false);

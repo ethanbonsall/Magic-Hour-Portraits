@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import emailjs from "emailjs-com";
+import Script from "next/script";
 
 import Head from "next/head";
 import { Textarea } from "@/components/ui/textarea";
@@ -109,6 +110,10 @@ const ContactPage = () => {
         <Head>
           <title>Contact</title>
         </Head>
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=6LfMWlwrAAAAAEsQHS_TmSkyBBk1-F4q2y5ESFzG`}
+          strategy="afterInteractive"
+        />
 
         <NavBar />
 

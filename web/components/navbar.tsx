@@ -5,7 +5,7 @@ import { Mail } from "lucide-react";
 import Link from "next/link";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import NavBarMobile from "@/components/navbar-mobile";
-const magicHour = "/assets/MagicHour.png";
+const magicHour = "/assets/magicHour.png";
 
 const NavBar = () => {
   const isMobile = useIsMobile();

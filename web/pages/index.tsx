@@ -6,6 +6,7 @@ import Head from "next/head";
 import AboutSection from "@/components/home/about-section";
 import ConsultationSection from "@/components/home/consultation";
 import LegacySection from "@/components/home/portrait-section";
+// import Rating from "@/components/rating";
 
 const Portfolio = () => {
   return (
@@ -20,6 +21,7 @@ const Portfolio = () => {
       <Experience />
       <LegacySection />
       <AboutSection />
+      {/* <Rating /> */}
       <ConsultationSection />
       <BottomBar />
     </div>
