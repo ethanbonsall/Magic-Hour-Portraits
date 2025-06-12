@@ -298,7 +298,7 @@ const ContactPage = () => {
             <div className="flex justify-center pt-6">
               <Button
                 onClick={handleSend}
-                className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded"
+                className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
               >
                 Send
               </Button>

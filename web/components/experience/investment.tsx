@@ -22,7 +22,7 @@ const Investment = () => {
         </p>
         <p className="text-xl ml-0 md:ml-16">Investment begins at $2,799</p>
         <button
-          className="p-2 px-8 bg-primary-300 text-black ml-0 md:ml-16  text-xl"
+          className="p-2 px-8 bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white ml-0 md:ml-16 text-xl transition-colors"
           onClick={() => (window.location.href = "/contact")}
         >
           Inquire →

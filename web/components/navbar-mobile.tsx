@@ -16,7 +16,7 @@ const NavBarMobile = () => {
   return (
     <>
       {/* Top Navbar */}
-      <div className="fixed top-0 left-0 w-full bg-secondary text-text flex items-center justify-between px-4 py-3 z-40 shadow">
+      <div className="fixed top-0 left-0 w-full bg-secondary text-text-700 flex items-center justify-between px-4 py-3 z-40 shadow">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Image

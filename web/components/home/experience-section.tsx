@@ -7,7 +7,7 @@ const rightImg = "/assets/home/right.jpg";
 
 const HomeExperienceSection = () => {
   return (
-    <section className="bg-background w-full text-text py-20">
+    <section className="bg-background w-full text-text-700 py-20">
       <div className="w-full flex flex-col items-center text-center gap-10">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide">
           Romantic, elegant wedding photography

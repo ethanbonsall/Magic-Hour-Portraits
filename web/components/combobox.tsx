@@ -24,7 +24,7 @@ export default function CategoryComboBox({
 
   return (
     <div className="relative w-full">
-      <div className="flex items-center border border-gray-300 rounded shadow-sm focus-within:ring-2 focus-within:ring-primary bg-white px-3 py-2">
+      <div className="flex items-center border border-gray-300 rounded shadow-sm focus-within:ring-2 focus-within:ring-primary bg-white hover:bg-gray-100 px-3 py-2">
         <input
           type="text"
           value={query}
@@ -49,7 +49,7 @@ export default function CategoryComboBox({
         </button>
       </div>
 
-     {isOpen && (
+      {isOpen && (
         <ul className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow max-h-60 overflow-auto">
           {categories.map((option, idx) => (
             <li

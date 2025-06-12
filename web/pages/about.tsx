@@ -14,9 +14,9 @@ const AboutPage = () => {
       <div>
         <div>
           <div className="min-h-screen bg-background flex flex-col mt-10 md:mt-0 md:flex-row justify-between ">
-            <div className="flex-col flex text-text w-full md:w-1/2 gap-2">
+            <div className="flex-col flex text-text-800 w-full md:w-1/2 gap-2">
               <div className="w-full md:w-3/5">
-                <h2 className="text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center mt-6 text-text">
+                <h2 className="text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold text-center mt-6 ">
                   Dedicated To Capturing
                 </h2>
               </div>

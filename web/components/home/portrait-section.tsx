@@ -53,10 +53,17 @@ const LegacySection = () => {
     };
   }, []);
 
+  useEffect(() => {
+    carouselImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-background-600 text-black overflow-hidden"
+      className="w-full bg-background-700 text-black overflow-hidden"
     >
       {/* Top Parallax Header */}
       <div className="hidden md:flex relative h-[80vh] items-center justify-center text-center mb-20 px-6">
@@ -76,7 +83,7 @@ const LegacySection = () => {
           </h2>
         </div>
       </div>
-      <div className="relative h-[75lvh] md:hidden flex items-center bg-background-600 justify-center text-center mb-20 px-6">
+      <div className="relative h-[75lvh] md:hidden flex items-center bg-background-700 justify-center text-center mb-20 px-6">
         {/* Parallax Background */}
         <div
           ref={bgRef}
@@ -142,7 +149,7 @@ const LegacySection = () => {
       </div>
 
       {/* Bottom Content */}
-      <div className="pt-[300px] pb-20 px-6 text-center max-w-3xl mx-auto">
+      <div className="pt-[300px] pb-20 px-6 text-center text-white max-w-3xl mx-auto">
         <p className="text-lg md:text-xl 2xl:text-2xl leading-relaxed mb-8">
           There&apos;s nothing quite like the butterflies of your wedding day.
           And while you&apos;re sharing a nervous giggle or adoring gaze with
@@ -152,7 +159,7 @@ const LegacySection = () => {
         </p>
         <a
           href="/portfolio"
-          className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-md text-sm md:text-base font-medium transition hover:bg-primary/90"
+          className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-md text-sm md:text-base font-medium transition hover:bg-primary-400"
         >
           View Galleries →
         </a>

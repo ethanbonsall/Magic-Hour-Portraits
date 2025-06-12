@@ -3,7 +3,7 @@
 
 const AboutSection = () => {
   return (
-    <section className="flex bg-primary-100 text-text w-full justify-center py-16 px-4 md:px-12">
+    <section className="flex bg-primary-100 text-text-700 w-full justify-center py-16 px-4 md:px-12">
       <div className="max-w-screen-xl px-auto flex flex-col md:flex-row justify-items-center items-center gap-12">
         {/* Image */}
         <div className="w-full md:w-1/2">
@@ -39,7 +39,7 @@ const AboutSection = () => {
           </p>
           <a
             href="/about"
-            className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-md text-sm md:text-base font-medium transition hover:bg-primary/90"
+            className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-md text-sm md:text-base font-medium transition hover:bg-primary-400"
           >
             More about me →
           </a>

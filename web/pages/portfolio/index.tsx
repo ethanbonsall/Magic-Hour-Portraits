@@ -189,7 +189,7 @@ const PortfolioPage = () => {
             </p>
 
             <button
-              className="absolute text-text-800 text-2xl flex justify-center items-center gap-2 w-[15ch] text-center bg-secondary-200 h-12"
+              className="absolute text-text-800 hover:text-text-900 text-2xl flex justify-center items-center gap-2 w-[15ch] text-center bg-secondary-200 hover:bg-secondary-300 h-12 transition-colors"
               style={{ top: "80%", left: "113%" }}
               onClick={() => (window.location.href = "/contact")}
             >
@@ -214,7 +214,7 @@ const PortfolioPage = () => {
           </div>
 
           <button
-            className="text-text-800 text-lg flex justify-center items-center gap-2 px-6 py-3 bg-secondary-200 rounded-md"
+            className="text-text-800 hover:text-text-900 text-lg flex justify-center items-center gap-2 px-6 py-3 bg-secondary-200 hover:bg-secondary-300 rounded-md"
             onClick={() => (window.location.href = "/contact")}
           >
             Contact me <MoveRight />

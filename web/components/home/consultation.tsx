@@ -62,7 +62,7 @@ const ConsultationSection = () => {
         </p>
         <Link
           href="/contact"
-          className="inline-block bg-primary text-white font-medium px-6 py-3 rounded-md text-sm md:text-base hover:bg-primary/90 transition"
+          className="inline-block bg-primary text-white font-medium px-6 py-3 rounded-md text-sm md:text-base hover:bg-primary-400 transition"
         >
           SCHEDULE A CONSULTATION
         </Link>
