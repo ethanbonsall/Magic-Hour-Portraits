@@ -19,6 +19,7 @@ const UploadBlogPost: React.FC = () => {
   const [password, setPassword] = useState<string>("");
   const [authenticated, setAuthenticated] = useState<boolean>(false);
   const [uploadLinks, setUploadLinks] = useState<string[]>([]);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleImageUpload = async () => {
     if (!files || !title) {
@@ -67,7 +68,7 @@ const UploadBlogPost: React.FC = () => {
 
     const { error } = await supabase.from("Blog").insert({
       title,
-      markdown: tsx, // still stored as text
+      markdown: tsx,
       images: `blog/${title}`,
     });
 
@@ -115,7 +116,26 @@ const UploadBlogPost: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 px-6 py-10 max-w-3xl mx-auto bg-background text-text">
+    <div className="flex flex-col gap-6 px-6 py-10 max-w-3xl mx-auto bg-background text-black">
+      {isOpen ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+          <div className="relative bg-secondary text-center p-6 rounded-xl shadow-xl max-w-md w-full">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-2 right-2 text-xl font-bold text-black hover:text-gray-800"
+            >
+              ×
+            </button>
+            <div className="flex flex-col text-start">
+              <p>{`ALERT!!!: Type in your Title then upload your images.`}</p>
+              <p>Do not change your Title after uploading images.</p>
+              <p>Copy the command into chatgpt and only copy the code part. </p>
+              <p>Example at the bottom.</p>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
       <h1 className="text-3xl font-bold text-center">Upload Blog Post</h1>
 
       <Label htmlFor="title">Title</Label>
@@ -129,7 +149,11 @@ const UploadBlogPost: React.FC = () => {
       <Label htmlFor="tsx">TSX / MDX Content</Label>
       <Textarea
         id="tsx"
-        placeholder={`Write your blog post in TSX or MDX...\n\nExample: <h2>Hello</h2>\n<MyComponent />`}
+        placeholder={`Write your blog post in TSX ...\n\nExample: <div>
+  <h2>Blog Post Title</h2>
+  <img src="https://your-image-url.com/image1.jpg" alt="Image 1" />
+  <p>Your blog content here...</p>
+</div>`}
         rows={20}
         value={tsx}
         onChange={(e) => setTsx(e.target.value)}
@@ -149,23 +173,54 @@ const UploadBlogPost: React.FC = () => {
         </Button>
 
         {uploadLinks.length > 0 && (
-          <div className="mt-4 space-y-2">
-            <Label>Uploaded Image URLs (insert into TSX):</Label>
-            {uploadLinks.map((url, idx) => (
-              <div
-                key={idx}
-                className="text-sm break-all border px-2 py-1 rounded bg-muted"
-              >
-                {url}
-              </div>
-            ))}
+          <div className="flex flex-col mt-4 space-y-2">
+            <Label className="bold">
+              Copy the entire command below this into ChatGPT (Everything in
+              red):
+            </Label>
+            <div className="text-red-800">
+              <Label>
+                Use these images to create a blog post in tsx using img instead
+                of image. Give only the tsx, I do not need return() just the
+                actual code. Make sure it is wrapped in a div. The blog post
+                should be about
+                <span className="text-red-950 semi-bold">
+                  [Insert what you want to write about]
+                </span>
+              </Label>
+              {uploadLinks.map((url, idx) => (
+                <div
+                  key={idx}
+                  className="text-sm break-all border px-2 py-1 rounded bg-muted text-red"
+                >
+                  {url}
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </div>
 
-      <Button className="bg-secondary mt-6" onClick={handleSubmit}>
+      <Button className="bg-secondary my-6" onClick={handleSubmit}>
         Submit Blog Post
       </Button>
+
+      <div className="flex flex-col">
+        <h1 className="bold">Example:</h1>
+        <pre>
+          <code>{`<div>
+  <h2>Blog Post Title</h2>
+  <img src="https://your-image-url.com/image1.jpg" alt="Image 1" />
+  <p>Your blog content here...</p>
+</div>`}</code>
+        </pre>
+      </div>
+      <button
+        className="flex self-center text-center bg-primary text-black p-3  w-auto"
+        onClick={() => setIsOpen(true)}
+      >
+        Open box again
+      </button>
     </div>
   );
 };
