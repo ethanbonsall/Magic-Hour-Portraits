@@ -207,13 +207,15 @@ const UploadBlogPost: React.FC = () => {
 
       <div className="flex flex-col">
         <h1 className="bold">Example:</h1>
-        <pre>
-          <code>{`<div>
+        <div className="max-w-full">
+          <pre>
+            <code>{`<div>
   <h2>Blog Post Title</h2>
   <img src="https://your-image-url.com/image1.jpg" alt="Image 1" />
   <p>Your blog content here...</p>
 </div>`}</code>
-        </pre>
+          </pre>
+        </div>
       </div>
       <button
         className="flex self-center text-center bg-primary text-black p-3  w-auto"
