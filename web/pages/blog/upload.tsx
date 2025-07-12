@@ -207,7 +207,7 @@ const UploadBlogPost: React.FC = () => {
 
       <div className="flex flex-col">
         <h1 className="bold">Example:</h1>
-        <div className="max-w-full">
+        <div className="max-w-screen">
           <pre>
             <code>{`<div>
   <h2>Blog Post Title</h2>
