@@ -46,9 +46,9 @@ const Header = () => {
             src={src}
             alt={`Header Image ${i}`}
             fill
-            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 object-cover ${
               i === index ? "opacity-100" : "opacity-0"
-            }`}
+            } ${i === 1 ? "object-[bottom]" : "object-center"}`}
             priority={i === 0}
           />
         ))}
