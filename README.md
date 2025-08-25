@@ -10,7 +10,7 @@
 
 ## Running Locally
 
-    git clone https://github.com/ethanbonsall/magicHour.git
+    git clone https://github.com/ethanbonsall/Magic-Hour-Portraits.git
 ```
 cd web
 ```
