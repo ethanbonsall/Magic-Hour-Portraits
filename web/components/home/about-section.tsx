@@ -3,7 +3,7 @@
 
 const AboutSection = () => {
   return (
-    <section className="flex bg-primary-100 text-text-700 w-full justify-center py-16 px-4 md:px-12">
+    <section className="flex bg-background text-text-700 w-full justify-center py-16 px-4 md:px-12">
       <div className="max-w-screen-xl px-auto flex flex-col md:flex-row justify-items-center items-center gap-12">
         {/* Image */}
         <div className="w-full md:w-1/2">
