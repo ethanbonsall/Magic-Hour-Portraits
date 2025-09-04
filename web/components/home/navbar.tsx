@@ -11,7 +11,7 @@ const NavBar = () => {
   const isMobile = useIsMobile();
 
   return (
-    <nav className="fixed top-0 z-40 w-full bg-secondary text-text shadow">
+    <nav className="fixed top-0 z-30 w-full bg-secondary text-text shadow">
       {isMobile ? (
         <NavBarMobile />
       ) : (
