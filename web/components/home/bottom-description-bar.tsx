@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 const magicHour = "/assets/magicHour.png";
 
 const Footer = () => {
@@ -26,6 +27,12 @@ const Footer = () => {
           Pennsylvania Photographer serving couples in PA, NY, NJ, MD, DE, and
           destinations.
         </p>
+        <div className="text-lg">
+          Made by ethan @&nbsp;
+          <Link className="text-primary" href="https://www.ethanbonsall.com">
+            ethanbonsall.com :&#41;
+          </Link>
+        </div>
       </div>
     </footer>
   );
