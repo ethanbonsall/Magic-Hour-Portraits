@@ -145,20 +145,6 @@ const UploadBlogPost: React.FC = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-
-      <Label htmlFor="tsx">TSX / MDX Content</Label>
-      <Textarea
-        id="tsx"
-        placeholder={`Write your blog post in TSX ...\n\nExample: <div>
-  <h2>Blog Post Title</h2>
-  <img src="https://your-image-url.com/image1.jpg" alt="Image 1" />
-  <p>Your blog content here...</p>
-</div>`}
-        rows={20}
-        value={tsx}
-        onChange={(e) => setTsx(e.target.value)}
-      />
-
       <div className="space-y-2">
         <Label htmlFor="images">Upload Images</Label>
         <Input
@@ -200,6 +186,19 @@ const UploadBlogPost: React.FC = () => {
           </div>
         )}
       </div>
+
+      <Label htmlFor="tsx">TSX Content</Label>
+      <Textarea
+        id="tsx"
+        placeholder={`Write your blog post in TSX ...\n\nExample: <div>
+  <h2>Blog Post Title</h2>
+  <img src="https://your-image-url.com/image1.jpg" alt="Image 1" />
+  <p>Your blog content here...</p>
+</div>`}
+        rows={20}
+        value={tsx}
+        onChange={(e) => setTsx(e.target.value)}
+      />
 
       <Button className="bg-secondary my-6" onClick={handleSubmit}>
         Submit Blog Post
