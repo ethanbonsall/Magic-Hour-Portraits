@@ -233,7 +233,7 @@ const ContactPage = () => {
                     className="bg-white"
                     classNames={{
                       day: `
-                        h-8 w-8 p-0 font-normal 
+                        h-8 w-8 p-0 font-normal text-center
                         transition-colors duration-200
                         rounded-full
                         hover:bg-primary-300 
