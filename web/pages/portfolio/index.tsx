@@ -11,6 +11,7 @@ import { fetchFamilies, FamilyEntry } from "@/lib/fetchFamilies";
 import { MoveRight } from "lucide-react";
 import Footer from "@/components/home/bottom-description-bar";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const signature1 = "/assets/wedding/signature-event.webp";
 const signature2 = "/assets/wedding/signature-event2.webp";
@@ -94,7 +95,7 @@ const PortfolioPage = () => {
               : weddings.map((wedding, idx) => (
                   <div key={idx} className="text-start space-y-2">
                     {wedding.previewUrl ? (
-                      <a
+                      <Link
                         href={`/portfolio/weddings/${wedding.Title.replace(
                           /\s+/g,
                           "-"
@@ -116,7 +117,7 @@ const PortfolioPage = () => {
                           }`}
                           onLoad={() => handleImageLoad(wedding.previewUrl!)}
                         />
-                      </a>
+                      </Link>
                     ) : (
                       <div className="bg-background rounded-md flex items-center justify-center">
                         <span>No image</span>
@@ -134,13 +135,13 @@ const PortfolioPage = () => {
               asChild
               className="text-2xl lg:text-3xl 2xl:text-4xl px-10 py-5 2xl:px-16 2xl:py-8 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
             >
-              <a
+              <Link
                 href="https://calendly.com/robertbonsall-magichourportraits/thirtyminutes"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Wedding Vision Call
-              </a>
+              </Link>
             </Button>
           </div>
         </div>
@@ -163,7 +164,7 @@ const PortfolioPage = () => {
               : engagements.map((item, idx) => (
                   <div key={idx} className="text-start space-y-2">
                     {item.previewUrl ? (
-                      <a
+                      <Link
                         href={`/portfolio/engagements/${item.Title.replace(
                           /\s+/g,
                           "-"
@@ -185,7 +186,7 @@ const PortfolioPage = () => {
                           }`}
                           onLoad={() => handleImageLoad(item.previewUrl!)}
                         />
-                      </a>
+                      </Link>
                     ) : (
                       <div className="bg-background rounded-md flex items-center justify-center">
                         <span>No image</span>
@@ -218,7 +219,7 @@ const PortfolioPage = () => {
               : families.map((item, idx) => (
                   <div key={idx} className="text-start space-y-2">
                     {item.previewUrl ? (
-                      <a
+                      <Link
                         href={`/portfolio/families/${item.Title.replace(
                           /\s+/g,
                           "-"
@@ -240,7 +241,7 @@ const PortfolioPage = () => {
                           }`}
                           onLoad={() => handleImageLoad(item.previewUrl!)}
                         />
-                      </a>
+                      </Link>
                     ) : (
                       <div className="bg-background rounded-md flex items-center justify-center">
                         <span>No image</span>
@@ -258,13 +259,13 @@ const PortfolioPage = () => {
               asChild
               className="text-2xl lg:text-3xl 2xl:text-4xl px-10 py-5 2xl:px-16 2xl:py-8 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
             >
-              <a
+              <Link
                 href="https://calendly.com/robertbonsall-magichourportraits/family-heirloom-portraits-chat"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Family Vision Call
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

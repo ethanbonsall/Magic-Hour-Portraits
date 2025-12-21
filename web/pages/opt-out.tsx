@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 const OptOutPage = () => {
   const [name, setName] = useState("");
@@ -312,9 +313,9 @@ const OptOutPage = () => {
               </li>
               <li>
                 If you have any questions, please{" "}
-                <a href="/contact" className="text-primary hover:underline">
+                <Link href="/contact" className="text-primary hover:underline">
                   contact us
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

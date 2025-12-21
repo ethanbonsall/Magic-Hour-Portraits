@@ -2,6 +2,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 
+import Link from "next/link";
+
 const AboutSection = () => {
   return (
     <section className="flex bg-background text-text-700 w-full justify-center py-16 px-4 md:px-12">
@@ -38,12 +40,12 @@ const AboutSection = () => {
             and heartfelt artistry to every session, creating heirlooms defined
             by warmth, authenticity, and grace.
           </p>
-          <a
+          <Link
             href="/about"
             className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-md text-sm md:text-base font-medium transition hover:bg-primary-400"
           >
             More about me →
-          </a>
+          </Link>
         </div>
       </div>
     </section>

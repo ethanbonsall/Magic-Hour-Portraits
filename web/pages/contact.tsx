@@ -30,6 +30,7 @@ import Script from "next/script";
 import Head from "next/head";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/router";
+import Link from "next/link";
 const ContactPage = () => {
   const [phone, setPhone] = useState("");
   const [date, setDate] = useState<Date | undefined>(undefined);
@@ -310,25 +311,25 @@ const ContactPage = () => {
                 asChild
                 className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
               >
-                <a
+                <Link
                   href="https://calendly.com/robertbonsall-magichourportraits/family-heirloom-portraits-chat"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Family Vision Call
-                </a>
+                </Link>
               </Button>
               <Button
                 asChild
                 className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
               >
-                <a
+                <Link
                   href="https://calendly.com/robertbonsall-magichourportraits/thirtyminutes"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Wedding Vision Call
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

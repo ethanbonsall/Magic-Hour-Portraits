@@ -4,6 +4,7 @@
 import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
 import Head from "next/head";
+import Link from "next/link";
 
 const PrivacyPolicyPage = () => {
   return (
@@ -51,7 +52,9 @@ const PrivacyPolicyPage = () => {
                 Information We Collect
               </h2>
               <div className="space-y-3 text-text-800">
-                <p>We may collect information about you in a variety of ways:</p>
+                <p>
+                  We may collect information about you in a variety of ways:
+                </p>
                 <ul className="list-disc list-inside space-y-2 ml-4">
                   <li>
                     <strong>Personal Information:</strong> Name, email address,
@@ -148,13 +151,14 @@ const PrivacyPolicyPage = () => {
               <p className="text-text-800">
                 You have the right to access, update, or delete your personal
                 information at any time. You may also opt-out of certain
-                communications from us. To exercise these rights, please visit our{" "}
-                <a
+                communications from us. To exercise these rights, please visit
+                our{" "}
+                <Link
                   href="/opt-out"
                   className="text-primary hover:underline font-semibold"
                 >
                   opt-out page
-                </a>{" "}
+                </Link>{" "}
                 or contact us using the information provided below.
               </p>
             </section>
@@ -198,12 +202,12 @@ const PrivacyPolicyPage = () => {
                 </p>
                 <p>Robert Bonsall</p>
                 <p>
-                  <a
+                  <Link
                     href="/contact"
                     className="text-primary hover:underline"
                   >
                     Contact Page
-                  </a>
+                  </Link>
                 </p>
               </div>
             </section>
@@ -216,4 +220,3 @@ const PrivacyPolicyPage = () => {
 };
 
 export default PrivacyPolicyPage;
-

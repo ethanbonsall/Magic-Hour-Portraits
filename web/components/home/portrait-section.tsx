@@ -5,6 +5,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MoveLeft, MoveRight } from "lucide-react";
+import Link from "next/link";
 
 const carouselImages = [
   "/assets/carousel/img1.webp",
@@ -36,7 +37,7 @@ const LegacySection = () => {
   // Preload images
   const preloadImage = (src: string) => {
     if (preloadedImages.current.has(src)) return;
-    
+
     const img = new Image();
     img.onload = () => {
       preloadedImages.current.add(src);
@@ -57,11 +58,13 @@ const LegacySection = () => {
   // Preload adjacent images when index changes
   useEffect(() => {
     // Calculate indices directly to avoid closure issues
-    const prevIndex = (index - 1 + carouselImages.length) % carouselImages.length;
+    const prevIndex =
+      (index - 1 + carouselImages.length) % carouselImages.length;
     const nextIndex = (index + 1) % carouselImages.length;
-    const prevPrevIndex = (index - 2 + carouselImages.length) % carouselImages.length;
+    const prevPrevIndex =
+      (index - 2 + carouselImages.length) % carouselImages.length;
     const nextNextIndex = (index + 2) % carouselImages.length;
-    
+
     // Preload current, previous, and next images
     preloadImage(carouselImages[prevIndex]);
     preloadImage(carouselImages[index]);
@@ -193,12 +196,12 @@ const LegacySection = () => {
           might look someday to your children and grandchildren. Long after the
           butterflies are gone, a legacy of love and joy remains in its place.
         </p>
-        <a
+        <Link
           href="/portfolio"
           className="inline-block mt-4 px-6 py-3 bg-primary text-white rounded-md text-sm md:text-base font-medium transition hover:bg-primary-400"
         >
           View Galleries →
-        </a>
+        </Link>
       </div>
     </section>
   );

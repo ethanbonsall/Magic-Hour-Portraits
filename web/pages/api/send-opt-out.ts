@@ -148,7 +148,7 @@ Submitted on: ${new Date().toLocaleString("en-US", {
           </ul>
         </div>
         
-        <p>If you have any questions or need to modify your request, please contact us at <a href="mailto:${recipientEmail}">${recipientEmail}</a>.</p>
+        <p>If you have any questions or need to modify your request, please contact us at <Link href="mailto:${recipientEmail}">${recipientEmail}</Link>.</p>
         
         <p>Best regards,<br>Magic Hour Portraits</p>
         
