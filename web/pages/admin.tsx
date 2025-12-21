@@ -7,14 +7,12 @@ import NavBar from "@/components/navbar";
 import Head from "next/head";
 import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
-import { useRouter } from "next/router";
 
 const AdminPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authenticated, setAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const router = useRouter();
 
   // Check if user is already authenticated
   useEffect(() => {
@@ -195,4 +193,3 @@ const AdminPage = () => {
 };
 
 export default AdminPage;
-

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 // File: pages/opt-out.tsx
 "use client";
 
@@ -96,8 +97,10 @@ const OptOutPage = () => {
         return;
       }
 
-      alert("Your opt-out request has been submitted successfully. A confirmation email has been sent to your email address. We will process your request within 10 business days.");
-      
+      alert(
+        "Your opt-out request has been submitted successfully. A confirmation email has been sent to your email address. We will process your request within 10 business days."
+      );
+
       // Reset form
       setName("");
       setEmail("");
@@ -111,8 +114,11 @@ const OptOutPage = () => {
         all: false,
       });
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "Unknown error";
-      alert(`There was an error submitting your request: ${errorMessage}. Please try again or contact us directly.`);
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error";
+      alert(
+        `There was an error submitting your request: ${errorMessage}. Please try again or contact us directly.`
+      );
       setSubmitting(false);
     }
   };
@@ -294,9 +300,12 @@ const OptOutPage = () => {
             </h3>
             <ul className="list-disc list-inside space-y-2 text-text-700">
               <li>
-                Your request will be sent to robertbonsall@magichourportraits.com
+                Your request will be sent to
+                robertbonsall@magichourportraits.com
               </li>
-              <li>We will process your opt-out request within 10 business days</li>
+              <li>
+                We will process your opt-out request within 10 business days
+              </li>
               <li>
                 You will receive a confirmation email once your request has been
                 processed
@@ -317,4 +326,3 @@ const OptOutPage = () => {
 };
 
 export default OptOutPage;
-

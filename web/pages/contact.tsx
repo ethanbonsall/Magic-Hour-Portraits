@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // File: pages/contact.tsx
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";

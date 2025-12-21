@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // File: pages/form.tsx
 import CategoryComboBox from "@/components/combobox";
 import { Input } from "@/components/ui/input";
