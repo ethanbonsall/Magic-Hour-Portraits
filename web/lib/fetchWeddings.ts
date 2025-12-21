@@ -14,7 +14,6 @@ export const fetchWedding = async (): Promise<WeddingEntry[]> => {
         .eq("Type", "Wedding");
 
     if (error || !data) {
-        console.error("Error fetching wedding images:", error);
         return [];
     }
 

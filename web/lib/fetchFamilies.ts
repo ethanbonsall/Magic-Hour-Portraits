@@ -14,7 +14,6 @@ export const fetchFamilies = async (): Promise<FamilyEntry[]> => {
         .eq("Type", "Family");
 
     if (error || !data) {
-        console.error("Error fetching family images:", error);
         return [];
     }
 

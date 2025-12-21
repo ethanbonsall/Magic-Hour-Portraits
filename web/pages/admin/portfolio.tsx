@@ -1,9 +1,10 @@
+// File: pages/admin/portfolio.tsx
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
 import * as React from "react";
-import { Check, ChevronsUpDown } from "lucide-react";
-import { useState } from "react";
+import { Check, ChevronsUpDown, ChevronLeft } from "lucide-react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -21,12 +22,10 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { createClient } from "@supabase/supabase-js";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+import { supabase } from "@/lib/supabaseClient";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/home/bottom-description-bar";
+import Link from "next/link";
 
 const frameworks = [
   { value: "Wedding", label: "Wedding" },
@@ -51,6 +50,32 @@ const UploadPage = () => {
     }
   };
 
+  const [authenticated, setAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  // Check if user is already authenticated
+  useEffect(() => {
+    const checkAuth = async () => {
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
+      if (session) {
+        setAuthenticated(true);
+      }
+      setLoading(false);
+    };
+    checkAuth();
+
+    // Listen for auth changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setAuthenticated(!!session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const handleUpload = async () => {
     if (!files || !title || !location || !value) {
       alert("Please fill out all fields and select images.");
@@ -69,7 +94,6 @@ const UploadPage = () => {
         });
 
       if (error) {
-        console.error("Upload error:", error);
         alert("Image upload failed.");
         return;
       }
@@ -86,7 +110,6 @@ const UploadPage = () => {
     });
 
     if (insertError) {
-      console.error("Insert error:", insertError);
       alert("Metadata insert failed.");
     } else {
       alert("Submitted!");
@@ -97,53 +120,60 @@ const UploadPage = () => {
       setValue("");
     }
   };
-  const [password, setPassword] = useState("");
-  const [authenticated, setAuthenticated] = useState(false);
 
-  const handleLogin = () => {
-    const correct = process.env.NEXT_PUBLIC_UPLOAD_PAGE_PASSWORD;
-    if (password === correct) {
-      setAuthenticated(true);
-    } else {
-      alert("Incorrect password");
-    }
-  };
+  if (loading) {
+    return (
+      <div className="w-screen overflow-x-hidden">
+        <NavBar />
+        <div className="flex flex-col items-center justify-center min-h-screen bg-background text-text">
+          <p>Loading...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
+
   if (!authenticated) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-background text-text space-y-4">
-        <h1 className="text-2xl font-semibold">Enter Password to Continue</h1>
-        <Input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="w-64"
-        />
-        <Button className="bg-secondary" onClick={handleLogin}>
-          Submit
-        </Button>
+      <div className="w-screen overflow-x-hidden">
+        <NavBar />
+        <div className="flex flex-col items-center justify-center min-h-screen bg-background text-text space-y-4">
+          <h1 className="text-2xl font-semibold">Authentication Required</h1>
+          <p className="text-text-800">Please log in through the admin page to access this section.</p>
+        </div>
+        <Footer />
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col align-start justify-start bg-background text-text border-border pt-8 gap-8 min-h-screen px-8">
+    <div className="w-screen overflow-x-hidden">
+      <NavBar />
+      <div className="flex flex-col align-start justify-start bg-background text-text border-border pt-8 gap-8 min-h-screen px-8">
+      <div className="flex items-center gap-4">
+        <Link href="/admin">
+          <Button variant="default" className="flex items-center text-xl bg-primary text-black px-4 py-6 rounded-[5px] gap-2 hover:bg-primary-500">
+            <ChevronLeft className="h-16 w-16" />
+            Back to Admin
+          </Button>
+        </Link>
+      </div>
       <h1 className="text-center text-3xl font-semibold">Upload</h1>
 
       {/* ComboBox */}
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger className="self-center" asChild>
           <Button
-            variant="outline"
+            variant="default"
             role="combobox"
             aria-expanded={open}
-            className="w-[200px] justify-between"
+            className="w-[200px] justify-between text-black text-xl"
           >
             {value || "Select type..."}
             <ChevronsUpDown className="opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0">
+        <PopoverContent className="w-[200px] p-0 bg-background border-border text-black text-xl">
           <Command>
             <CommandInput placeholder="Search type" className="h-9" />
             <CommandList>
@@ -158,15 +188,16 @@ const UploadPage = () => {
                       setOpen(false);
                     }}
                     className={cn(
-                      "text-text",
-                      "data-[selected]:bg-secondary-200",
-                      "bg-secondary"
+                      "text-text cursor-pointer",
+                      "data-[selected=true]:bg-primary-200 data-[selected=true]:text-black",
+                      "hover:bg-primary-100 hover:text-black",
+                      "bg-background"
                     )}
                   >
                     {framework.label}
                     <Check
                       className={cn(
-                        "ml-auto",
+                        "ml-auto h-4 w-4",
                         value === framework.value ? "opacity-100" : "opacity-0"
                       )}
                     />
@@ -234,6 +265,8 @@ const UploadPage = () => {
       <Button className="bg-secondary" onClick={handleUpload}>
         Upload
       </Button>
+      </div>
+      <Footer />
     </div>
   );
 };

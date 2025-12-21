@@ -10,7 +10,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const secret = process.env.RECAPTCHA_SECRET_KEY;
         if (!secret) {
-            console.error("Missing RECAPTCHA_SECRET_KEY");
             return res.status(500).json({ success: false, message: "Server misconfiguration" });
         }
 
@@ -23,7 +22,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const data = await response.json();
         return res.status(200).json(data);
     } catch (err) {
-        console.error("reCAPTCHA error:", err);
         return res.status(500).json({ success: false, message: "reCAPTCHA verification failed" });
     }
 }

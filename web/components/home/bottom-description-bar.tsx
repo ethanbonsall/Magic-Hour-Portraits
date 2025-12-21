@@ -1,3 +1,4 @@
+// File: components/home/bottom-description-bar.tsx
 "use client";
 
 import Image from "next/image";
@@ -27,6 +28,19 @@ const Footer = () => {
           Pennsylvania Photographer serving couples in PA, NY, NJ, MD, DE, and
           destinations.
         </p>
+        <div className="flex flex-col md:flex-row items-center md:gap-4 text-sm md:text-base">
+          <Link className="text-primary hover:underline" href="/admin">
+            Admin
+          </Link>
+          <span className="hidden md:inline">|</span>
+          <Link className="text-primary hover:underline" href="/privacy-policy">
+            Privacy Policy
+          </Link>
+          <span className="hidden md:inline">|</span>
+          <Link className="text-primary hover:underline" href="/opt-out">
+            Opt out
+          </Link>
+        </div>
         <div className="text-lg">
           Made by ethan @&nbsp;
           <Link className="text-primary" href="https://www.ethanbonsall.com">

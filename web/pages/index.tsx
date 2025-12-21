@@ -1,3 +1,4 @@
+// File: pages/index.tsx
 "use client";
 import { useEffect, useState } from "react";
 
@@ -28,7 +29,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="bg-background flex flex-col items-center w-full font-roboto min-h-screen">
+    <div className="w-screen overflow-x-hidden bg-background flex flex-col items-center font-roboto min-h-screen">
       <Head>
         <title>Magic Hour Portraits</title>
         <meta name="description" content="Magic Hour Portraits Portfolio" />

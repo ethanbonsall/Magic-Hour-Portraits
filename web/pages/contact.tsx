@@ -1,3 +1,4 @@
+// File: pages/contact.tsx
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 declare global {
@@ -112,7 +113,6 @@ const ContactPage = () => {
       setPriority("");
       setVacation("");
     } catch (error) {
-      console.error("Error during form submission:", error);
       alert("Something went wrong. Please try again.");
     }
   };
@@ -127,7 +127,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div>
+    <div className="w-screen overflow-x-hidden">
       {/* <!-- reCAPTCHA is used for spam protection. The badge has been hidden in compliance with Google's terms: https://developers.google.com/recaptcha/docs/faq --> */}
 
       <div className="min-h-screen bg-background mt-4 md:mt-0">
@@ -301,6 +301,33 @@ const ContactPage = () => {
                 className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
               >
                 Send
+              </Button>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <Button
+                asChild
+                className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
+              >
+                <a
+                  href="https://calendly.com/robertbonsall-magichourportraits/family-heirloom-portraits-chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Family Vision Call
+                </a>
+              </Button>
+              <Button
+                asChild
+                className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
+              >
+                <a
+                  href="https://calendly.com/robertbonsall-magichourportraits/thirtyminutes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Wedding Vision Call
+                </a>
               </Button>
             </div>
           </div>

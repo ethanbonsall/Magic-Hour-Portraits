@@ -1,3 +1,4 @@
+// File: components/home/home-carousel.tsx
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -8,21 +9,29 @@ import SocialIcons from "./socialIcons";
 import { useIsMobile } from "@/hooks/useIsMobile";
 
 const localPhotos = [
-  "/assets/header/header1.jpg",
-  "/assets/header/header2.jpg",
-  "/assets/header/header3.jpg",
+  "/assets/header/header1.webp",
+  "/assets/header/header2.webp",
+  "/assets/header/header3.webp",
   "/assets/header/header4.jpg",
   "/assets/header/header5.jpg",
 ];
 
 const mobilePhotos = [
-  "/assets/header/mobile1.jpg",
-  "/assets/header/mobile2.jpg",
-  "/assets/header/mobile3.jpg",
-  "/assets/header/mobile4.jpg",
+  "/assets/header/mobile1.webp",
+  "/assets/header/mobile2.webp",
+  "/assets/header/mobile3.webp",
+  "/assets/header/mobile4.webp",
+  "/assets/header/mobile5.webp",
 ];
 
 const magicHourLogo = "/assets/magicHour.png";
+
+const mobileObjectPositions: Record<number, string> = {
+  0: "object-[66%]",
+  1: "object-[15%]",
+  3: "object-[28%]",
+  4: "object-[85%]",
+};
 
 const Header = () => {
   const [index, setIndex] = useState(0);
@@ -42,15 +51,15 @@ const Header = () => {
         {/* Background Images */}
         {(isMobile ? mobilePhotos : localPhotos).map((src, i) => (
           <Image
-            key={i}
-            src={src}
-            alt={`Header Image ${i}`}
-            fill
-            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 object-cover ${
-              i === index ? "opacity-100" : "opacity-0"
-            } ${i === 1 ? "object-[bottom]" : "object-center"}`}
-            priority={i === 0}
-          />
+          key={i}
+          src={src}
+          alt={`Header Image ${i}`}
+          fill
+          priority={i === 0}
+          className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
+            i === index ? "opacity-100" : "opacity-0"
+          } ${isMobile ? mobileObjectPositions[i] ?? "" : ""}`}
+        />
         ))}
 
         {/* Centered Text Overlay */}

@@ -1,3 +1,4 @@
+// File: components/home/experience-section.tsx
 import Image from "next/image";
 import Link from "next/link";
 

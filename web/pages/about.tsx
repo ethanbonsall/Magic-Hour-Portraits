@@ -1,3 +1,4 @@
+// File: pages/about.tsx
 /* eslint-disable @next/next/no-img-element */
 import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
@@ -6,7 +7,7 @@ const about = "/assets/about/about.jpg";
 const about2 = "/assets/about/about2.jpg";
 const AboutPage = () => {
   return (
-    <div>
+    <div className="w-screen overflow-x-hidden">
       <Head>
         <title>About</title>
       </Head>
@@ -64,13 +65,13 @@ const AboutPage = () => {
                 <img
                   src={about}
                   alt="Robert"
-                  className="w-3/4 md:w-full  md:h-[360px] lg:h-[480px] xl:h-[600px] 2xl:h-[700px] object-cover mb-60 ml-12 object-bottom rounded shadow"
+                  className=" aspect-[10/16] md:h-[360px] lg:h-[480px] xl:h-[600px] 2xl:h-[700px] object-cover mb-60 p-2 md:p-0 md:ml-12 object-[22%] rounded shadow"
                 />
 
                 <img
                   src={about2}
-                  alt="Robert2"
-                  className="absolute bottom-16 md:bottom-12 lg:bottom-0 left-16 md:-left-16 -translate-y-1/2 w-2/3 object-cover rounded shadow border-4 border-background"
+                  alt="Family"
+                  className="absolute bottom-16 md:bottom-12 lg:bottom-0 left-16 md:-left-10 -translate-y-1/2 w-2/3 object-cover rounded shadow border-4 border-background"
                 />
               </div>
             </div>

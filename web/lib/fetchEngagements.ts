@@ -14,7 +14,6 @@ export const fetchEngagement = async (): Promise<EngagementEntry[]> => {
         .eq("Type", "Engagement");
 
     if (error || !data) {
-        console.error("Error fetching engagement images:", error);
         return [];
     }
 

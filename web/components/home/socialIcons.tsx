@@ -1,3 +1,4 @@
+// File: components/home/socialIcons.tsx
 "use client";
 
 import { SiInstagram, SiFacebook } from "react-icons/si";

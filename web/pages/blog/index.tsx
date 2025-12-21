@@ -1,3 +1,4 @@
+// File: pages/blog/index.tsx
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import Head from "next/head";
@@ -32,7 +33,6 @@ const BlogPage = () => {
         .order("created_at", { ascending: false });
 
       if (error) {
-        console.error("Error fetching posts:", error);
         return;
       }
 
@@ -68,7 +68,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div>
+    <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Blog</title>
       </Head>

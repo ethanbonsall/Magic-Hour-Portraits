@@ -1,3 +1,4 @@
+// File: components/home/portrait-section.tsx
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
@@ -6,10 +7,10 @@ import { useEffect, useRef, useState } from "react";
 import { MoveLeft, MoveRight } from "lucide-react";
 
 const carouselImages = [
-  "/assets/carousel/img1.jpg",
-  "/assets/carousel/img2.jpg",
-  "/assets/carousel/img3.jpg",
-  "/assets/carousel/img4.jpg",
+  "/assets/carousel/img1.webp",
+  "/assets/carousel/img2.webp",
+  "/assets/carousel/img3.webp",
+  "/assets/carousel/img4.webp",
 ];
 
 const LegacySection = () => {
@@ -30,6 +31,45 @@ const LegacySection = () => {
   };
   const sectionRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
+  const preloadedImages = useRef<Set<string>>(new Set());
+
+  // Preload images
+  const preloadImage = (src: string) => {
+    if (preloadedImages.current.has(src)) return;
+    
+    const img = new Image();
+    img.onload = () => {
+      preloadedImages.current.add(src);
+    };
+    img.onerror = () => {
+      console.warn(`Failed to preload image: ${src}`);
+    };
+    img.src = src;
+  };
+
+  // Preload all images on mount
+  useEffect(() => {
+    carouselImages.forEach((src) => {
+      preloadImage(src);
+    });
+  }, []);
+
+  // Preload adjacent images when index changes
+  useEffect(() => {
+    // Calculate indices directly to avoid closure issues
+    const prevIndex = (index - 1 + carouselImages.length) % carouselImages.length;
+    const nextIndex = (index + 1) % carouselImages.length;
+    const prevPrevIndex = (index - 2 + carouselImages.length) % carouselImages.length;
+    const nextNextIndex = (index + 2) % carouselImages.length;
+    
+    // Preload current, previous, and next images
+    preloadImage(carouselImages[prevIndex]);
+    preloadImage(carouselImages[index]);
+    preloadImage(carouselImages[nextIndex]);
+    // Also preload one more in each direction for smoother transitions
+    preloadImage(carouselImages[prevPrevIndex]);
+    preloadImage(carouselImages[nextNextIndex]);
+  }, [index]);
 
   useEffect(() => {
     let animationFrameId: number;
@@ -53,13 +93,6 @@ const LegacySection = () => {
     };
   }, []);
 
-  useEffect(() => {
-    carouselImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
-
   return (
     <section
       ref={sectionRef}
@@ -70,7 +103,7 @@ const LegacySection = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-fixed"
           style={{
-            backgroundImage: "url('/assets/wedding/signature-event2.jpg')",
+            backgroundImage: "url('/assets/wedding/signature-event2.webp')",
             filter: "blur(4px)",
             opacity: 0.5,
           }}
@@ -89,7 +122,7 @@ const LegacySection = () => {
           ref={bgRef}
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/assets/wedding/signature-event2.jpg')",
+            backgroundImage: "url('/assets/wedding/signature-event2.webp')",
             filter: "blur(4px)",
             opacity: 0.5,
             willChange: "transform",
@@ -122,18 +155,21 @@ const LegacySection = () => {
             <img
               src={carouselImages[getRelativeIndex(-1)]}
               alt="Previous"
+              loading="eager"
               className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90 hidden md:block transition-all duration-500"
             />
             {/* Current Image */}
             <img
               src={carouselImages[getRelativeIndex(0)]}
               alt="Current"
+              loading="eager"
               className=" w-full pt-20 md:pt-0 md:w-1/3 md:max-h-[600px] object-cover rounded-lg shadow-none md:shadow-lg z-20 transition-all duration-500"
             />
             {/* Next Image */}
             <img
               src={carouselImages[getRelativeIndex(1)]}
               alt="Next"
+              loading="eager"
               className="w-1/4 max-h-[500px] object-cover rounded-lg opacity-100 blur-sm scale-90 hidden md:block transition-all duration-500"
             />
           </div>

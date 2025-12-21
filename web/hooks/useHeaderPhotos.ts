@@ -24,7 +24,6 @@ const useHeaderPhotos = () => {
 
                 setPhotos(data.map((photo: any) => photo.url));
             } catch (error) {
-                console.error("Error fetching photos:", error);
                 setPhotos([]);
                 setLoading(false);
             }

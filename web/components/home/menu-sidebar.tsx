@@ -1,3 +1,4 @@
+// File: components/home/menu-sidebar.tsx
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -33,7 +34,7 @@ const MenuSidebar = () => {
         `}
       >
         <img
-          src="/assets/sidebar/cake.jpg"
+          src="/assets/sidebar/cake.webp"
           alt="Blurry cake background"
           className="absolute inset-0 w-full h-full object-cover object-[25%] filter blur-sm opacity-30 z-[-1]"
         />

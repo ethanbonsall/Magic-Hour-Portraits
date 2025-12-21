@@ -1,3 +1,4 @@
+// File: pages/experience.tsx
 import Description from "@/components/experience/description";
 import Investment from "@/components/experience/investment";
 import Landing from "@/components/experience/landing";
@@ -7,7 +8,7 @@ import NavBar from "@/components/navbar";
 import Head from "next/head";
 const ExperiencePage = () => {
   return (
-    <div>
+    <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Experience</title>
       </Head>

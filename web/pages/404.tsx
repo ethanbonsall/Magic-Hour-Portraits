@@ -1,4 +1,4 @@
-// pages/404.tsx
+// File: pages/404.tsx
 "use client"; // if using App Router (Next.js 13+)
 
 import { useEffect } from "react";

@@ -1,3 +1,4 @@
+// File: pages/portfolio/engagements/[title].tsx
 import { GalleryImages } from "@/components/galleryImages";
 import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
@@ -25,7 +26,7 @@ export default function FamilyPage() {
   if (!wedding) return <p> </p>;
 
   return (
-    <div className="bg-background text-text">
+    <div className="w-screen overflow-x-hidden bg-background text-text">
       <div className="static">
         <NavBar />
       </div>

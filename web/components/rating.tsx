@@ -1,3 +1,4 @@
+// File: components/rating.tsx
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -23,9 +24,7 @@ export default function ReviewCarousel() {
         .select("name, event, review, rating")
         .eq("rating", 5);
 
-      if (error) {
-        console.error("Error fetching reviews:", error.message);
-      } else {
+      if (!error) {
         setReviews(data ?? []);
       }
     };
@@ -66,7 +65,7 @@ export default function ReviewCarousel() {
 
       <div className="hidden md:block md:absolute md:left-3/4 md:top-1/2 md:-translate-y-1/2 md:-translate-x-1/3">
         <img
-          src="/assets/review.jpg"
+          src="/assets/review.webp"
           alt="Review"
           className="w-100 h-auto object-cover rounded-lg shadow-md border-primary-500 border-4"
         />

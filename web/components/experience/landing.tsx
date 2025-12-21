@@ -1,3 +1,4 @@
+// File: components/experience/landing.tsx
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -39,7 +40,7 @@ const Landing = () => {
         ref={bgRef}
         className="absolute inset-0 bg-cover bg-background-500 bg-center"
         style={{
-          backgroundImage: "url('/assets/wedding/signature-event2.jpg')",
+          backgroundImage: "url('/assets/wedding/signature-event2.webp')",
           filter: "blur(6px)",
           opacity: 0.5,
           willChange: "transform",

@@ -1,3 +1,4 @@
+// File: components/experience/process.tsx
 /* eslint-disable @next/next/no-img-element */
 import { useState } from "react";
 
@@ -40,12 +41,12 @@ const Process = () => {
       </div>
       <div className="w-full flex flex-col md:w-[40dvw] bg-background-700 justify-evenly py-8 md:py-0 gap-4 md:gap-0">
         <img
-          src="/assets/wedding/signature-event.jpg"
+          src="/assets/wedding/signature-event.webp"
           alt="wedding image 1"
           className="mx-4"
         ></img>
         <img
-          src="/assets/wedding/signature-event2.jpg"
+          src="/assets/wedding/signature-event2.webp"
           alt="wedding image 2"
           className="mx-4"
         ></img>

@@ -1,3 +1,4 @@
+// File: pages/form.tsx
 import CategoryComboBox from "@/components/combobox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -82,7 +83,6 @@ export default function FormPage() {
         });
 
         if (error) {
-          console.error("Submission error:", error.message);
           alert("Something went wrong while submitting. Please try again.");
         } else {
           alert("Thank you for your feedback!");
@@ -93,13 +93,12 @@ export default function FormPage() {
         }
       });
     } catch (err) {
-      console.error("reCAPTCHA error:", err);
       alert("Something went wrong with reCAPTCHA. Please try again.");
     }
   };
 
   return (
-    <div>
+    <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Form</title>
       </Head>

@@ -1,3 +1,4 @@
+// File: components/navbar-mobile.tsx
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -47,7 +48,7 @@ const NavBarMobile = () => {
         } transition-transform duration-500 ease-in-out z-50 p-8 flex flex-col gap-8`}
       >
         <img
-          src="/assets/sidebar/cake.jpg"
+          src="/assets/sidebar/cake.webp"
           alt="Blurry cake background"
           className="absolute inset-0 w-full h-full object-cover object-[25%] filter blur-sm opacity-30 z-[-1]"
         />

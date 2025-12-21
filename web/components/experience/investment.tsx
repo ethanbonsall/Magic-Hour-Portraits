@@ -1,17 +1,18 @@
+// File: components/experience/investment.tsx
 /* eslint-disable @next/next/no-img-element */
 const Investment = () => {
   return (
     <div className="flex md:flex-row flex-col items-center justify-center text-center md:text-left min-h-screen py-8 md:py-0 bg-background-200">
       <div className="w-full md:w-[50%] flex justify-center md:justify-end">
         <img
-          src="assets/investment.jpg"
+          src="assets/investment.webp"
           alt="investment"
           className="h-[40lvh] md:h-[80lvh] w-auto object-cover my-4 md:mb-0"
         ></img>
       </div>
-      <div className="w-full md:w-[50%] pl-0 md:pl-8 text-text space-y-8">
+      <div className="w-full md:w-[55%] pl-0 md:pl-8 text-text space-y-8">
         <div>
-          <p className="text-6xl md:text-7xl xl:text-8xl font-thin">
+          <p className="text-5xl md:text-6xl xl:text-8xl font-thin">
             YOUR INVESTMENT
           </p>
           <p className="text-5xl ml-0 md:ml-16"> with Magic Hour Portraits</p>

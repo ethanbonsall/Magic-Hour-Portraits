@@ -1,3 +1,4 @@
+// File: components/home/navbar.tsx
 import Image from "next/image";
 
 import { SiInstagram, SiFacebook } from "react-icons/si";
