@@ -34,7 +34,7 @@ const mobileObjectPositions: Record<number, string> = {
 };
 
 const Header = () => {
-  const [index, setIndex] = useState(0);
+  const [, setIndex] = useState(0);
   const isMobile = useIsMobile();
 
   useEffect(() => {
