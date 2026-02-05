@@ -1,8 +1,13 @@
-/* eslint-disable @next/next/no-html-link-for-pages */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // File: pages/opt-out.tsx
 "use client";
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
 import Head from "next/head";
@@ -11,6 +16,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import Script from "next/script";
+import supabase from "@/supabaseClient";
 
 const OptOutPage = () => {
   const [name, setName] = useState("");
@@ -25,6 +33,37 @@ const OptOutPage = () => {
     all: false,
   });
   const [submitting, setSubmitting] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const cleanupRecaptcha = () => {
+      if (window.grecaptcha) {
+        delete window.grecaptcha;
+      }
+
+      const script = document.querySelector("script[src*='recaptcha/api.js']");
+      if (script) {
+        script.remove();
+      }
+    };
+
+    router.events.on("routeChangeStart", cleanupRecaptcha);
+
+    return () => {
+      router.events.off("routeChangeStart", cleanupRecaptcha);
+      cleanupRecaptcha();
+    };
+  }, [router]);
+
+  const addOptOut = async () => {
+    const {} = await supabase.from("opt-out").insert({
+      name: name,
+      email: email,
+      number: phone,
+      opt_out: optOutOptions,
+      additional: additionalInfo,
+    });
+  };
 
   const handleOptionChange = (option: keyof typeof optOutOptions) => {
     if (option === "all") {
@@ -74,6 +113,26 @@ const OptOutPage = () => {
     setSubmitting(true);
 
     try {
+      const token = await window.grecaptcha.execute(
+        "6LfMWlwrAAAAAEsQHS_TmSkyBBk1-F4q2y5ESFzG",
+        {
+          action: "contact_form",
+        }
+      );
+
+      const verifyRes = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+
+      const verifyData = await verifyRes.json();
+      if (!verifyData.success || verifyData.score < 0.5) {
+        alert("reCAPTCHA verification failed. Please try again.");
+        setSubmitting(false);
+        return;
+      }
+
       // Send opt-out request via API
       const response = await fetch("/api/send-opt-out", {
         method: "POST",
@@ -88,7 +147,7 @@ const OptOutPage = () => {
           additionalInfo,
         }),
       });
-
+      addOptOut();
       const data = await response.json();
 
       if (!response.ok || !data.success) {
@@ -126,9 +185,14 @@ const OptOutPage = () => {
 
   return (
     <div className="w-screen overflow-x-hidden">
+      {/* <!-- reCAPTCHA is used for spam protection. The badge has been hidden in compliance with Google's terms: https://developers.google.com/recaptcha/docs/faq --> */}
       <Head>
         <title>Opt-Out Request - Magic Hour Portraits</title>
       </Head>
+      <Script
+        src={`https://www.google.com/recaptcha/api.js?render=6LfMWlwrAAAAAEsQHS_TmSkyBBk1-F4q2y5ESFzG`}
+        strategy="afterInteractive"
+      />
       <NavBar />
       <div className="flex flex-col items-center justify-center min-h-screen bg-background text-text px-4 py-12">
         <div className="w-full max-w-3xl space-y-8">

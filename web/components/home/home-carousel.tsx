@@ -51,15 +51,15 @@ const Header = () => {
         {/* Background Images */}
         {(isMobile ? mobilePhotos : localPhotos).map((src, i) => (
           <Image
-          key={i}
-          src={src}
-          alt={`Header Image ${i}`}
-          fill
-          priority={i === 0}
-          className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
-            i === index ? "opacity-100" : "opacity-0"
-          } ${isMobile ? mobileObjectPositions[i] ?? "" : ""}`}
-        />
+            key={i}
+            src={src}
+            alt={`Header Image ${i}`}
+            fill
+            priority={i === 0}
+            className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
+              i === 3 ? "opacity-100" : "opacity-0"
+            } ${isMobile ? mobileObjectPositions[i] ?? "" : ""}`}
+          />
         ))}
 
         {/* Centered Text Overlay */}
