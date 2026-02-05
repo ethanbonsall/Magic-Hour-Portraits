@@ -175,6 +175,18 @@ const AdminPage = () => {
                 Create and publish a new blog post
               </p>
             </Link>
+            <Link
+              href="/admin/opt-out"
+              className="flex flex-col items-center justify-center p-8 bg-primary-100 hover:bg-primary-200 rounded-lg transition-colors border-2 border-transparent hover:border-primary"
+            >
+              <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+                View Opt Out Requests
+              </h2>
+              <p className="text-center text-sm md:text-base text-text-800">
+                View and manage client requests to opt out of marketing
+                materials
+              </p>
+            </Link>
           </div>
           <div className="flex justify-center pt-8">
             <button

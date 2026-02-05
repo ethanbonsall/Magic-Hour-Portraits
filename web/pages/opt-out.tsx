@@ -173,6 +173,7 @@ const OptOutPage = () => {
         dataSharing: false,
         all: false,
       });
+      setSubmitting(false);
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : "Unknown error";
