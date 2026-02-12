@@ -1,14 +1,14 @@
 // File: pages/_document.tsx
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Google tag (gtag.js) - Google Analytics */}
-        <script
+        <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-5DZE26FSVM"
+          src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
         />
         <script
           dangerouslySetInnerHTML={{
@@ -16,7 +16,7 @@ export default function Document() {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-5DZE26FSVM');
+              gtag('config', 'G-1JPCVGXG7T');
             `,
           }}
         />

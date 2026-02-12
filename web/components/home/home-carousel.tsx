@@ -34,7 +34,7 @@ const mobileObjectPositions: Record<number, string> = {
 };
 
 const Header = () => {
-  const [, setIndex] = useState(0);
+  const [index, setIndex] = useState(0);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -57,12 +57,10 @@ const Header = () => {
             fill
             priority={i === 0}
             className={`absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-1000 ${
-              i === 3 ? "opacity-100" : "opacity-0"
+              i === index ? "opacity-100" : "opacity-0"
             } ${isMobile ? mobileObjectPositions[i] ?? "" : ""}`}
           />
         ))}
-
-        {/* Centered Text Overlay */}
 
         <div className="absolute flex flex-row justify-end items-end px-1 py-1 md:px-4 md:py-2 inset-0 text-secondary text-center">
           <img
@@ -72,7 +70,6 @@ const Header = () => {
           ></img>
         </div>
 
-        {/* Top Right and Left Items */}
         <SocialIcons />
         <MenuSidebar />
       </div>
