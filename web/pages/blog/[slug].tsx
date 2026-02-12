@@ -46,7 +46,10 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     };
   }
 
-  const mdxSource = await serialize(data.markdown);
+  const mdxSource = await serialize(data.markdown, {
+    blockJS: false,
+    blockDangerousJS: false,
+  });
 
   return {
     props: {
