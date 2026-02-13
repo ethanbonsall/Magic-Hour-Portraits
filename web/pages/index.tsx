@@ -10,6 +10,7 @@ import Head from "next/head";
 import AboutSection from "@/components/home/about-section";
 import ConsultationSection from "@/components/home/consultation";
 import LegacySection from "@/components/home/portrait-section";
+import Script from "next/script";
 // import Rating from "@/components/rating";
 
 const Portfolio = () => {
@@ -35,6 +36,20 @@ const Portfolio = () => {
         <meta name="description" content="Magic Hour Portraits Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
 
       <section id="hero" className="w-full">
         <Home />

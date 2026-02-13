@@ -6,6 +6,7 @@ import Link from "next/link";
 import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
 import { createClient } from "@supabase/supabase-js";
+import Script from "next/script";
 
 // Supabase client
 const supabase = createClient(
@@ -72,6 +73,20 @@ const BlogPage = () => {
       <Head>
         <title>Blog</title>
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
       <NavBar />
       <div className="bg-background mt-4 md:mt-0">
         <div className="mx-auto w-full max-w-6xl px-6 py-12 min-h-screen text-text">

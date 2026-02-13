@@ -6,6 +6,8 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/home/bottom-description-bar";
 import { createClient } from "@supabase/supabase-js";
+import Head from "next/head";
+import Script from "next/script";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -16,20 +18,6 @@ interface Props {
   source: MDXRemoteSerializeResult;
   title: string;
 }
-
-const BlogPostPage = ({ source, title }: Props) => (
-  <div className="w-screen overflow-x-hidden bg-background text-text min-h-screen mt-4 md:mt-0">
-    <NavBar />
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold mb-8">{title}</h1>
-      <div className="prose prose-neutral dark:prose-invert">
-        <MDXRemote {...source} components={{ Image: NextImage }} />
-      </div>
-    </div>
-    <Footer />
-  </div>
-);
-
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const slug = params?.slug as string;
 
@@ -58,5 +46,35 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     },
   };
 };
+
+const BlogPostPage = ({ source, title }: Props) => (
+  <div className="w-screen overflow-x-hidden bg-background text-text min-h-screen mt-4 md:mt-0">
+    <Head>
+      <title>{title}</title>
+    </Head>
+    <Script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+    />
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+      }}
+    />
+    <NavBar />
+    <div className="max-w-4xl mx-auto px-6 py-12">
+      <h1 className="text-4xl font-bold mb-8">{title}</h1>
+      <div className="prose prose-neutral dark:prose-invert">
+        <MDXRemote {...source} components={{ Image: NextImage }} />
+      </div>
+    </div>
+    <Footer />
+  </div>
+);
 
 export default BlogPostPage;

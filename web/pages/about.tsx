@@ -3,6 +3,7 @@
 import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
 import Head from "next/head";
+import Script from "next/script";
 const about = "/assets/about/about.jpg";
 const about2 = "/assets/about/about2.jpg";
 const AboutPage = () => {
@@ -11,6 +12,20 @@ const AboutPage = () => {
       <Head>
         <title>About</title>
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
       <NavBar />
       <div>
         <div>

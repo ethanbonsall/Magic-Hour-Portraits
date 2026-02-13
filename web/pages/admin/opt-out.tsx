@@ -6,6 +6,8 @@ import Link from "next/link";
 import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
 import supabase from "@/supabaseClient";
+import Script from "next/script";
+import Head from "next/head";
 
 type OptOutRow = {
   id?: string;
@@ -138,6 +140,23 @@ export default function OptOutAdminPage() {
 
   return (
     <div className="min-h-screen">
+      <Head>
+        <title>Opt Out</title>
+      </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
       <NavBar />
 
       <main className="min-h-screen mx-auto w-full max-w-6xl p-6">

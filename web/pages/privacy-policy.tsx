@@ -5,6 +5,7 @@ import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
 import Head from "next/head";
 import Link from "next/link";
+import Script from "next/script";
 
 const PrivacyPolicyPage = () => {
   return (
@@ -12,6 +13,20 @@ const PrivacyPolicyPage = () => {
       <Head>
         <title>Privacy Policy</title>
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
       <NavBar />
       <div className="flex flex-col items-center justify-center min-h-screen bg-background text-text px-4 py-12">
         <div className="w-full max-w-4xl space-y-8">

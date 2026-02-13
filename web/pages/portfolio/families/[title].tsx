@@ -4,7 +4,9 @@ import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
 import { FamilyEntry, fetchFamilies } from "@/lib/fetchFamilies";
 import { MoveLeft } from "lucide-react";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { useEffect, useState } from "react";
 
 export default function FamilyPage() {
@@ -27,6 +29,23 @@ export default function FamilyPage() {
 
   return (
     <div className="w-screen overflow-x-hidden bg-background text-text">
+      <Head>
+        <title>{titleParam}</title>
+      </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
       <div className="static">
         <NavBar />
       </div>

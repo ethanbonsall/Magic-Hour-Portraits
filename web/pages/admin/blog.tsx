@@ -12,6 +12,8 @@ import { supabase } from "@/lib/supabaseClient";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/home/bottom-description-bar";
 import Link from "next/link";
+import Script from "next/script";
+import Head from "next/head";
 
 const UploadBlogPost: React.FC = () => {
   const [title, setTitle] = useState<string>("");
@@ -162,6 +164,23 @@ const UploadBlogPost: React.FC = () => {
   if (!authenticated) {
     return (
       <div className="w-screen overflow-x-hidden">
+        <Head>
+          <title>Authentication Required</title>
+        </Head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+          }}
+        />
         <NavBar />
         <div className="flex flex-col items-center justify-center min-h-screen bg-background text-text space-y-4">
           <h1 className="text-2xl font-semibold">Authentication Required</h1>
@@ -176,6 +195,23 @@ const UploadBlogPost: React.FC = () => {
 
   return (
     <div className="w-screen overflow-x-hidden">
+      <Head>
+        <title>Upload Blog Post</title>
+      </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
       <NavBar />
       <div className="flex flex-col gap-6 px-6 py-10 bg-background text-black min-h-screen">
         <div className="flex items-center gap-4">

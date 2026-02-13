@@ -12,6 +12,7 @@ import { MoveRight } from "lucide-react";
 import Footer from "@/components/home/bottom-description-bar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Script from "next/script";
 
 const signature1 = "/assets/wedding/signature-event.webp";
 const signature2 = "/assets/wedding/signature-event2.webp";
@@ -54,6 +55,21 @@ const PortfolioPage = () => {
       <Head>
         <title>Portfolio</title>
       </Head>
+
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-1JPCVGXG7T"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-1JPCVGXG7T');
+            `,
+        }}
+      />
 
       <NavBar />
       <div className="">

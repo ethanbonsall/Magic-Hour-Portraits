@@ -26,12 +26,11 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       if (typeof window.gtag !== "undefined") {
-        window.gtag("config", "G-5DZE26FSVM", {
+        window.gtag("config", "G-1JPCVGXG7T", {
           page_path: url,
         });
       }
     };
-
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
