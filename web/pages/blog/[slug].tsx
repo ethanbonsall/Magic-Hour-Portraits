@@ -51,6 +51,7 @@ const BlogPostPage = ({ source, title }: Props) => (
   <div className="w-screen overflow-x-hidden bg-background text-text min-h-screen mt-4 md:mt-0">
     <Head>
       <title>{title}</title>
+      <meta name="description" content={`${title} - Photography insights and inspiration from Magic Hour Portraits, an elegant photography studio serving Pennsylvania and beyond.`} />
     </Head>
     <Script
       async

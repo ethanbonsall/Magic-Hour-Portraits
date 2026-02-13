@@ -12,6 +12,7 @@ const ExperiencePage = () => {
     <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Experience</title>
+        <meta name="description" content="Discover the Magic Hour Portraits experience. From consultation to delivery, learn about our process, investment, and commitment to creating elegant, timeless photography." />
       </Head>
       <Script
         async

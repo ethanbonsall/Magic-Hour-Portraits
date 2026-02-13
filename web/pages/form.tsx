@@ -102,6 +102,7 @@ export default function FormPage() {
     <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Form</title>
+        <meta name="description" content="Share your feedback about your Magic Hour Portraits experience. Your thoughts help us continue creating elegant, timeless photography for future clients." />
       </Head>
       {/* <!-- reCAPTCHA is used for spam protection. The badge has been hidden in compliance with Google's terms: https://developers.google.com/recaptcha/docs/faq --> */}
       <Script

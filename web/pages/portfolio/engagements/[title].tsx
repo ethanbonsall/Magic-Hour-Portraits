@@ -31,6 +31,7 @@ export default function FamilyPage() {
     <div className="w-screen overflow-x-hidden bg-background text-text">
       <Head>
         <title>{titleParam}</title>
+        <meta name="description" content={`Engagement photography gallery: ${titleParam}${wedding?.Location ? ` at ${wedding.Location}` : ''}. Romantic engagement portraits capturing your love story.`} />
       </Head>
       <Script
         async

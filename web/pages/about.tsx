@@ -11,6 +11,7 @@ const AboutPage = () => {
     <div className="w-screen overflow-x-hidden">
       <Head>
         <title>About</title>
+        <meta name="description" content="Meet Robert Bonsall, founder and photographer at Magic Hour Portraits. With decades of experience, he creates timeless, elegant portraits that become cherished heirlooms." />
       </Head>
       <Script
         async

@@ -31,6 +31,7 @@ export default function WeddingPage() {
     <div className="w-screen overflow-x-hidden bg-background text-text">
       <Head>
         <title>{titleParam}</title>
+        <meta name="description" content={`Elegant wedding photography gallery: ${titleParam}${wedding?.Location ? ` at ${wedding.Location}` : ''}. Timeless wedding portraits capturing your special day.`} />
       </Head>
       <Script
         async

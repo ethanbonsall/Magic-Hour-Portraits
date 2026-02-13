@@ -33,7 +33,7 @@ const Portfolio = () => {
     <div className="w-screen overflow-x-hidden bg-background flex flex-col items-center font-roboto min-h-screen">
       <Head>
         <title>Magic Hour Portraits</title>
-        <meta name="description" content="Magic Hour Portraits Portfolio" />
+        <meta name="description" content="Elegant wedding, family, engagement, and portrait photography in Pennsylvania and beyond. Capturing timeless moments with artistic style and genuine emotion." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script

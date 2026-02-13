@@ -135,6 +135,7 @@ const ContactPage = () => {
       <div className="min-h-screen bg-background mt-4 md:mt-0">
         <Head>
           <title>Contact</title>
+          <meta name="description" content="Inquire about wedding, family, engagement, or portrait photography services in Pennsylvania, surrounding states, and destination locations. Let's discuss your vision." />
         </Head>
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=6LfMWlwrAAAAAEsQHS_TmSkyBBk1-F4q2y5ESFzG`}

@@ -54,6 +54,7 @@ const PortfolioPage = () => {
     <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Portfolio</title>
+        <meta name="description" content="Browse our signature galleries featuring elegant weddings, engagement sessions, and family portraits. Timeless photography capturing life's most meaningful moments." />
       </Head>
 
       <Script

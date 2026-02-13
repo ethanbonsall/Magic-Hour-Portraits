@@ -72,6 +72,7 @@ const BlogPage = () => {
     <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Blog</title>
+        <meta name="description" content="Photography tips, wedding inspiration, and stories from Magic Hour Portraits. Insights on capturing elegant moments and creating timeless family heirlooms." />
       </Head>
       <Script
         async
