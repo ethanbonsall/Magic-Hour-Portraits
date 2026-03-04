@@ -135,7 +135,10 @@ const ContactPage = () => {
       <div className="min-h-screen bg-background mt-4 md:mt-0">
         <Head>
           <title>Contact</title>
-          <meta name="description" content="Inquire about wedding, family, engagement, or portrait photography services in Pennsylvania, surrounding states, and destination locations. Let's discuss your vision." />
+          <meta
+            name="description"
+            content="Inquire about wedding, family, engagement, or portrait photography services in Pennsylvania, surrounding states, and destination locations. Let's discuss your vision."
+          />
         </Head>
         <Script
           src={`https://www.google.com/recaptcha/api.js?render=6LfMWlwrAAAAAEsQHS_TmSkyBBk1-F4q2y5ESFzG`}
@@ -339,7 +342,7 @@ const ContactPage = () => {
                 className="w-full sm:w-auto text-lg lg:text-xl px-6 py-3 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
               >
                 <Link
-                  href="https://calendly.com/robertbonsall-magichourportraits/thirtyminutes"
+                  href=" https://calendly.com/robertbonsall-magichourportraits/fifteenminutes"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

@@ -54,7 +54,10 @@ const PortfolioPage = () => {
     <div className="w-screen overflow-x-hidden">
       <Head>
         <title>Portfolio</title>
-        <meta name="description" content="Browse our signature galleries featuring elegant weddings, engagement sessions, and family portraits. Timeless photography capturing life's most meaningful moments." />
+        <meta
+          name="description"
+          content="Browse our signature galleries featuring elegant weddings, engagement sessions, and family portraits. Timeless photography capturing life's most meaningful moments."
+        />
       </Head>
 
       <Script
@@ -153,7 +156,7 @@ const PortfolioPage = () => {
               className="text-2xl lg:text-3xl 2xl:text-4xl px-10 py-5 2xl:px-16 2xl:py-8 rounded bg-primary-300 hover:bg-primary-400 text-text-800 hover:text-white transition-colors"
             >
               <Link
-                href="https://calendly.com/robertbonsall-magichourportraits/thirtyminutes"
+                href="https://calendly.com/robertbonsall-magichourportraits/fifteenminutes"
                 target="_blank"
                 rel="noopener noreferrer"
               >

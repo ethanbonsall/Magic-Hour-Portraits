@@ -33,6 +33,13 @@ const Footer = () => {
             Admin
           </Link>
           <span className="hidden md:inline">|</span>
+          <Link
+            className="text-primary hover:underline"
+            href="/terms-of-service"
+          >
+            TOS
+          </Link>
+          <span className="hidden md:inline">|</span>
           <Link className="text-primary hover:underline" href="/privacy-policy">
             Privacy Policy
           </Link>
