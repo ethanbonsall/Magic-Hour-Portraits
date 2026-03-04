@@ -1,9 +1,14 @@
+import Footer from "@/components/home/bottom-description-bar";
 import NavBar from "@/components/navbar";
+import Head from "next/head";
 import React from "react";
 
 export default function TermsOfServicePage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
+      <Head>
+        <title>Terms Of Service</title>
+      </Head>
       <NavBar />
       <div className="mx-auto w-full max-w-4xl px-6 py-12">
         <header className="mb-10">
@@ -290,6 +295,7 @@ export default function TermsOfServicePage() {
           </p>
         </footer>
       </div>
+      <Footer />
     </main>
   );
 }
