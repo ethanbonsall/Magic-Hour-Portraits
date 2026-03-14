@@ -149,6 +149,102 @@ const PrivacyPolicyPage = () => {
 
             <section className="space-y-4">
               <h2 className="text-2xl md:text-3xl font-semibold text-text-800">
+                SMS Communications and Opt In
+              </h2>
+              <p className="text-text-800">
+                If you opt in to receive SMS messages from Magic Hour Portraits,
+                we may send messages related to your enquiry and our services,
+                including enquiry confirmations, scheduling links, appointment
+                confirmations and reminders, and service updates related to your
+                request. Message frequency varies. Msg and data rates may apply.
+                Reply STOP to opt out. Reply HELP for help.
+              </p>
+              <p className="text-text-800">
+                We only send SMS to contacts who provide explicit consent via
+                our opt in forms (unchecked checkbox) or who otherwise directly
+                request SMS communication from us.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-text-800">
+                Cookies and Tracking
+              </h2>
+              <p className="text-text-800">
+                We use cookies and similar technologies for website
+                functionality, analytics, and to understand website traffic and
+                performance. You can control cookies through your browser
+                settings. Disabling cookies may affect certain site features.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-text-800">
+                Information Sharing and Disclosure
+              </h2>
+              <p className="text-text-800">
+                We do not sell, trade, or rent your personal information to
+                third parties. We may share your information only in the
+                following circumstances:
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-4 text-text-800">
+                <li>
+                  With service providers who assist us in operating our website
+                  and conducting our business
+                </li>
+                <li>
+                  To comply with legal obligations or respond to lawful requests
+                </li>
+                <li>
+                  To protect our rights, privacy, safety, or property, and that
+                  of our users
+                </li>
+                <li>
+                  In connection with any merger, sale of assets, or acquisition
+                  of all or a portion of our business
+                </li>
+              </ul>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-text-800">
+                Mobile Information Sharing
+              </h2>
+              <p className="text-text-800">
+                No mobile information will be shared with third parties or
+                affiliates for marketing or promotional purposes. Information
+                sharing to service providers that help deliver our services (for
+                example CRM, scheduling, website hosting, and messaging
+                providers) is permitted.
+              </p>
+              <p className="text-text-800">
+                All other categories exclude text messaging originator opt in
+                data and consent. This information will not be shared with any
+                third parties.
+              </p>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-text-800">
+                Your Rights
+              </h2>
+              <ul className="list-disc list-inside space-y-2 ml-4 text-text-800">
+                <li>
+                  You may request access to, correction of, or deletion of your
+                  personal information by contacting us via our contact page.
+                </li>
+                <li>
+                  You can opt out of SMS messages at any time by replying STOP.
+                </li>
+                <li>
+                  You can also opt out of non essential communications by
+                  contacting us.
+                </li>
+              </ul>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl md:text-3xl font-semibold text-text-800">
                 Data Security
               </h2>
               <p className="text-text-800">
